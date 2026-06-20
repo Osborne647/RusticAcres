@@ -244,6 +244,14 @@ nav {
     font-size: 14px;
 }
 
+.modal__sub-title--about {
+    text-align: center;
+}
+
+.modal__sub-title--contact {
+    text-align: center;
+}
+
 .modal__para {
     margin-bottom: 12px;
     line-height: 1.75;
