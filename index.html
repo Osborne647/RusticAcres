@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rustic Acres Baked Creations</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/662da0114d.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init( "fuFqHm5g0Wi-p1K6a");
+   })();
+</script>
+  </head>
+  <body>
+    <section id="landing-page">
+          <nav>
+            <figure>
+              <img
+                src="./Logo/logo 4.png"
+                class="company__logo"
+                alt="company logo"
+              />
+            </figure>
+            <ul class="nav__link--list">
+              <li class="nav__link">
+                <a href="" class="nav__link--anchor link__hover-effect">About</a>
+              </li>
+              <li class="nav__link">
+                <a href="#featured__items" class="nav__link--anchor link__hover-effect"
+                  >Featured Items</a
+                >
+              </li>
+              <li class="nav__link" onclick="toggleModal()">
+                <a href="" class="nav__link--anchor link__hover-effect">Contact</a>
+              </li>
+              <li class="nav__link">
+                <a href="" class="nav__link--anchor link__hover-effect"
+                  >Shopping Cart</a
+                >
+              </li>
+            </ul>
+          </nav>
+      <header>
+        <div class="container__header">
+          <div class="row__header">
+            <h1 class="title">Rustic Acres Baked Creations</h1>
+            <h2 class="sub--title">Homemade baked goods for every occasion!</h2>
+          </div>
+        </div>
+        <figure class="company__logo--wrapper">
+            <img src="./Logo/logo 4.png" class="company__logo--big">
+        </figure>
+      </header>
+      <a href="#">
+      <button class="mail__btn click" onClick="toggleModal()">
+            <i class="fa-solid fa-envelope"></i>
+        </button>
+        </a>
+       <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">Here's a bit <b class="blue">about me.</b></h3>
+                <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer</h4>
+                <p class="modal__para">I'm a 32 year old software engineer from Missouri.
+                    <br>
+                    Currently working on difficult engineering problems.
+                </p> 
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fa-solid fa-xmark modal__exit click" onClick="toggleModal()"></i>
+                <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
+                <h4 class="modal__sub-title modal__sub-title--contact">I'm currently open to new opportunities.</h4>
+                <form id="contact__form" onSubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label">Name</label>
+                        <input class="input" name="user_name" type="text" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Email</label>
+                        <input class="input" name="user_email" type="email" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Message</label>
+                        <textarea class="input" name="message" type="text" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">Send it my way</button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fa-solid fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message! Looking forward to speaking to you soon.
+                </div>
+            </div>
+    </section>
+    <section id="featured__items">
+        <div class="container__featured">
+            <div class="row row__featured">
+                <h1 class="section__title">
+                    Featured Items
+                </h1>
+                <ul class="featured__list">
+                    <li class="feature">
+                        <div class="feature__wrapper"><a href="cookies.html" target="_blank">
+                            <img src="./Assets/cookie4.png" class="feature__img" alt="">
+                            <div class="feature__wrapper--bg"></div>
+                            <div class="feature__description">
+                                <h3 class="feature__description--title">
+                                    Cookies
+                                </h3></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="feature">
+                        <div class="feature__wrapper"><a href="cakes.html" target="_blank">
+                            <img src="./assets/cake2.png" class="feature__img" alt="">
+                            <div class="feature__wrapper--bg"></div>
+                            <div class="feature__description">
+                                <h3 class="feature__description--title">
+                                    Cakes
+                                </h3></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="feature">
+                        <div class="feature__wrapper"><a href="cakepops.html" target="_blank">
+                            <img src="./assets/cakepop9.png" class="feature__img" alt="">
+                            <div class="feature__wrapper--bg"></div>
+                            <div class="feature__description">
+                                <h3 class="feature__description--title">
+                                    Cakepops</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="feature">
+                        <div class="feature__wrapper"><a href="cupcakes.html" target="_blank">
+                            <img src="./assets/cupcakes.png" class="feature__img" alt="">
+                            <div class="feature__wrapper--bg"></div>
+                            <div class="feature__description">
+                                <h3 class="feature__description--title">
+                                    Cupcakes</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row footer__row">
+                <figure>
+                    <img src="./Logo/logo 4.png" class="company__logo" alt="company logo">
+                </figure>
+                <div class="footer__social--list">
+                    <a href="https://www.facebook.com/profile.php?id=100092244646668&rdid=GQWjMU5srxQwqT6W&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1dHfpQ5xDz%2F#" target="_blank" class="
+                    footer__social--link
+                    link__hover-effect
+                    link__hover-effect--white">
+                Facebook</a>
+                    <a href="#" onClick="toggleModal()" class="
+                    footer__social--link
+                    link__hover-effect
+                    link__hover-effect--white">
+                Email</a>
+                </div>
+                <div class="footer__copyright">Copyright © 2026 Rustic Acres Baked Creations</div>
+            </div>
+        </div>
+    </footer>
+  </body>
+</html>
