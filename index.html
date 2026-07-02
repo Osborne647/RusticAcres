@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rustic Acres Baked Creations</title>
     <script src="index.js"></script>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css">
     <script
       src="https://kit.fontawesome.com/662da0114d.js"
       crossorigin="anonymous"
@@ -21,7 +21,7 @@
   </head>
   <body>
     <section id="landing-page">
-          <nav>
+          <nav class="nav__main">
             <figure>
               <img
                 src="./Logo/logo 4.png"
@@ -31,20 +31,17 @@
             </figure>
             <ul class="nav__link--list">
               <li class="nav__link">
-                <a href="" class="nav__link--anchor link__hover-effect">About</a>
+                <a onClick="toggleModal()" class="nav__link--anchor link__hover-effect link__hover-effect--black">About</a>
               </li>
               <li class="nav__link">
-                <a href="#featured__items" class="nav__link--anchor link__hover-effect"
-                  >Featured Items</a
-                >
-              </li>
-              <li class="nav__link" onclick="toggleModal()">
-                <a href="" class="nav__link--anchor link__hover-effect">Contact</a>
+                <a href="#featured__items" class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                  >Featured Items</a>
               </li>
               <li class="nav__link">
-                <a href="" class="nav__link--anchor link__hover-effect"
-                  >Shopping Cart</a
-                >
+                <a onClick="toggleModal()" class="nav__link--anchor link__hover-effect link__hover-effect--black">Contact</a>
+              </li>
+              <li class="nav__link">
+                <a href="OrderScreen.html" class="nav__link--anchor link__hover-effect link__hover-effect--black">Order</a>
               </li>
             </ul>
           </nav>
@@ -67,15 +64,19 @@
        <div class="modal">
             <div class="modal__half modal__about">
                 <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
-                <h4 class="modal__sub-title modal__sub-title--about">Home Baker </h4>
+                <h4 class="modal__sub-title modal__sub-title--about">Founder & Head Baker </h4>
                 <p class="modal__para">
-                    <br>
-                    Baked creations for any occasion!
+                    What started as a labor of love in 1991, baking for family gatherings and special occasions, 
+                    grew into something bigger. By 1998, Cakes by Racheal Ruth was born, bringing homemade sweetness to the community for over two decades. 
+                    In 2025, we rebranded as Rustic Acres Baked Creations, a fresh name with the same heart and passion behind every dessert. 
+                    As a home bakery, we take pride in the personal touch that comes with every order, treating each creation like it's for our own family. 
+                    From elegant wedding cakes to playful cake pops, custom cupcakes to holiday cookies, if you can dream it, we can bake it. No creation is too big or too small. 
+                    Every dessert is made from scratch with care, creativity, and over 30 years of passion behind it.
                 </p> 
             </div>
             <div class="modal__half modal__contact">
                 <i class="fa-solid fa-xmark modal__exit click" onClick="toggleModal()"></i>
-                <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
+                <h3 class="modal__title modal__title--contact">Let's talk!</h3>
                 <h4 class="modal__sub-title modal__sub-title--contact">For any questions, send me a message!</h4>
                 <form id="contact__form" onSubmit="contact(event)">
                     <div class="form__item">
@@ -108,8 +109,8 @@
                 </h1>
                 <ul class="featured__list">
                     <li class="feature">
-                        <div class="feature__wrapper"><a href="cookies.html" target="_blank">
-                            <img src="./Assets/cookie4.png" class="feature__img" alt="">
+                        <div class="feature__wrapper"><a href="cookies.html">
+                            <img src="./Assets/cookie4.png" class="feature__img" alt="cookies">
                             <div class="feature__wrapper--bg"></div>
                             <div class="feature__description">
                                 <h3 class="feature__description--title">
@@ -119,8 +120,8 @@
                         </div>
                     </li>
                     <li class="feature">
-                        <div class="feature__wrapper"><a href="cakes.html" target="_blank">
-                            <img src="./assets/cake2.png" class="feature__img" alt="">
+                        <div class="feature__wrapper"><a href="cakes.html">
+                            <img src="./assets/cake2.png" class="feature__img" alt="cakes">
                             <div class="feature__wrapper--bg"></div>
                             <div class="feature__description">
                                 <h3 class="feature__description--title">
@@ -130,24 +131,24 @@
                         </div>
                     </li>
                     <li class="feature">
-                        <div class="feature__wrapper"><a href="cakepops.html" target="_blank">
-                            <img src="./assets/cakepop9.png" class="feature__img" alt="">
+                        <div class="feature__wrapper"><a href="cakepops.html">
+                            <img src="./assets/cakepop9.png" class="feature__img" alt="cakepops">
                             <div class="feature__wrapper--bg"></div>
                             <div class="feature__description">
                                 <h3 class="feature__description--title">
-                                    Cakepops</a>
-                                </h3>
+                                    Cakepops
+                                </h3></a>
                             </div>
                         </div>
                     </li>
                     <li class="feature">
-                        <div class="feature__wrapper"><a href="cupcakes.html" target="_blank">
-                            <img src="./assets/cupcakes.png" class="feature__img" alt="">
+                        <div class="feature__wrapper"><a href="cupcakes.html">
+                            <img src="./assets/cupcakes.png" class="feature__img" alt="cupcakes">
                             <div class="feature__wrapper--bg"></div>
                             <div class="feature__description">
                                 <h3 class="feature__description--title">
-                                    Cupcakes</a>
-                                </h3>
+                                    Cupcakes
+                                </h3></a>
                             </div>
                         </div>
                     </li>
@@ -159,7 +160,7 @@
         <div class="container">
             <div class="row footer__row">
                 <figure>
-                    <img src="./Logo/logo 4.png" class="company__logo" alt="company logo">
+                    <img src="./Logo/logo 4.png" class="company__logo--footer" alt="company logo">
                 </figure>
                 <div class="footer__social--list">
                     <a href="https://www.facebook.com/profile.php?id=100092244646668&rdid=GQWjMU5srxQwqT6W&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1dHfpQ5xDz%2F#" target="_blank" class="
@@ -172,6 +173,11 @@
                     link__hover-effect
                     link__hover-effect--white">
                 Email</a>
+                    <a href="https://www.tiktok.com/@rachealjohnston5?_r=1&_t=ZT-97NESKxbb1q" class="
+                    footer__social--link
+                    link__hover-effect
+                    link__hover-effect--white" target="_blank">
+                Tiktok</a>
                 </div>
                 <p class="disclaimer">**Disclaimer: This is a Cottage Bakery and operates under Missouri State Cottage Law.**</p>
                 <div class="footer__copyright">Copyright © 2026 Rustic Acres Baked Creations</div>
