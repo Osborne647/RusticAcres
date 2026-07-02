@@ -704,6 +704,7 @@ footer {
 .item__list {
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 40px;
 }
 
 .item {
@@ -790,6 +791,21 @@ footer {
   display: flex;
   justify-content: space-evenly;
   cursor: pointer;
+}
+
+.add-to-cart-btn {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  height: 35px;
+  font-size: 24px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+  transform: scale(1.1);
 }
 
 /* Cart */ 
@@ -897,6 +913,7 @@ footer {
     justify-content: space-between;
     margin-top: 1.5rem;
     gap: 1rem;
+    padding-bottom: 32px;
 }
 .cart__clear-btn {
     background: #fff;
