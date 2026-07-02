@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordering</title>
+    <link rel="stylesheet" href="styles.css">
+    <script
+      src="https://kit.fontawesome.com/662da0114d.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+     <section id="landing-page">
+          <nav class="nav__main">
+            <figure>
+              <img
+                src="./Logo/logo 4.png"
+                class="company__logo"
+                alt="company logo"
+              />
+            </figure>
+            <ul class="nav__link--list">
+              <li class="nav__link">
+                <a href="index.html" class="nav__link--anchor link__hover-effect link__hover-effect--black">Home</a>
+              </li>
+              <li class="nav__link">
+                <a onClick="toggleModal()" class="nav__link--anchor link__hover-effect link__hover-effect--black">Contact</a>
+              </li>
+              <li class="nav__link">
+                <a href="cart.html" class="nav__cart">
+                🛒 Cart <span id="cart__badge" class="cart__badge">0</span></a>
+              </li>
+            </ul>
+          </nav>
+      <header>
+        <div class="container__header">
+          <div class="row__header">
+            <h1 class="title">Rustic Acres Baked Creations</h1>
+            <h2 class="sub--title">Homemade baked goods for every occasion!</h2>
+          </div>
+        </div>
+      </header>
+      <a href="#">
+      <button class="mail__btn click" onClick="toggleModal()">
+            <i class="fa-solid fa-envelope"></i>
+        </button>
+        </a>
+       <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
+                <h4 class="modal__sub-title modal__sub-title--about">Founder & Head Baker </h4>
+                <p class="modal__para">
+                    What started as a labor of love in 1991, baking for family gatherings and special occasions, 
+                    grew into something bigger. By 1998, Cakes by Racheal Ruth was born, bringing homemade sweetness to the community for over two decades. 
+                    In 2025, we rebranded as Rustic Acres Baked Creations, a fresh name with the same heart and passion behind every dessert. 
+                    As a home bakery, we take pride in the personal touch that comes with every order, treating each creation like it's for our own family. 
+                    From elegant wedding cakes to playful cake pops, custom cupcakes to holiday cookies, if you can dream it, we can bake it. No creation is too big or too small. 
+                    Every dessert is made from scratch with care, creativity, and over 30 years of passion behind it.
+                </p> 
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fa-solid fa-xmark modal__exit click" onClick="toggleModal()"></i>
+                <h3 class="modal__title modal__title--contact">Let's talk!</h3>
+                <h4 class="modal__sub-title modal__sub-title--contact">For any questions, send me a message!</h4>
+                <form id="contact__form" onSubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label">Name</label>
+                        <input class="input" name="user_name" type="text" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Email</label>
+                        <input class="input" name="user_email" type="email" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Message</label>
+                        <textarea class="input" name="message" type="text" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">Email me!</button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fa-solid fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message! Looking forward to speaking to you soon.
+                </div>
+            </div>
+        </section>
+<section id="order__items">
+        <div class="container__order">
+            <div class="row row__order">
+                <h1 class="section__title">
+                    Baked Treats
+                </h1>
+                <ul class="item__list">
+                    <li class="item">
+                            <img src="./Assets/cookie4.png" class="item__img" alt="cookies">
+                            <div class="item__description">
+                                <h3 class="item__description--title">
+                                    Basic Cookies
+                                </h3>
+                            </div>
+                        <p class="item__para-3">Cookies for a simple treat</p>
+                        <p class="price">$14.99 a dozen</p>
+                        <div class="order__form--wrapper">
+                        <form class="order__form" data-product="Basic Cookies" data-price="14.99" data-unit="dozen">
+                        <div class="form__item--order">
+                            <label class="form__item--label--order">Flavor</label>
+                            <select class="input__order" name="flavor" required>
+                                <option value="" disabled selected>Select flavor</option>
+                                <option value="vanilla">Vanilla</option>
+                                <option value="chocolate">Chocolate</option>
+                                <option value="strawberry">Strawberry</option>
+                                <option value="mint">Mint</option>
+                                <option value="caramel">Caramel</option>
+                                <option value="blueberry">Blueberry</option>
+                                <option value="lemon">Lemon</option>
+                            </select>
+                        </div>
+                    <div class="form__item--order">
+                        <label class="form__item--label--order">Quantity</label>
+                        <select class="input__order" name="quantity" required>
+                            <option value="" disabled selected>Select quantity</option>
+                            <option value="12">12</option>
+                            <option value="24">24</option>
+                            <option value="36">36</option>
+                            <option value="48">48</option>
+                            <option value="60">60</option>
+                            <option value="72">72</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                     <div class="form__item--order">
+                    <label class="form__item--label--order">Shape</label>
+                    <select class="input__order" name="shape" required>
+                        <option value="" disabled selected>Select shape</option>
+                        <option value="round">Round</option>
+                        <option value="square">Square</option>
+                        <option value="rectangle">Rectangle</option>
+                        <option value="heart">Heart</option>
+                        <option value="star">Star</option>
+                        <option value="oval">Oval</option>
+                        <option value="triangle">Triangle</option>
+                    </select>
+                </div>
+                    <div class="form__item--order">
+                        <label class="form__item--label--order">Message</label>
+                        <textarea class="input__order" name="message" type="text" placeholder="Please specify if gluten-free. Note whether preference or allergy"></textarea>
+                    </div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                        </form>
+                        </div>
+                    </li>
+                    <li class="item">
+                            <img src="./Assets/cookie5.jpg" class="item__img" alt="cookies">
+                            <div class="item__description">
+                                <h3 class="item__description--title">
+                                    Occasion Cookies
+                                </h3>
+                            </div>
+                        <p class="item__para">Cookies for any celebration you have!</p>
+                        <p class="price">$19.99 a dozen</p>
+                        <div class="order__form--wrapper">
+                        <form class="order__form" data-product="Occasion Cookies" data-price="19.99" data-unit="dozen">
+                        <div class="form__item--order">
+                            <label class="form__item--label--order">Flavor</label>
+                            <select class="input__order" name="flavor" required>
+                                <option value="" disabled selected>Select flavor</option>
+                                <option value="vanilla">Vanilla</option>
+                                <option value="chocolate">Chocolate</option>
+                                <option value="strawberry">Strawberry</option>
+                                <option value="mint">Mint</option>
+                                <option value="caramel">Caramel</option>
+                                <option value="blueberry">Blueberry</option>
+                                <option value="lemon">Lemon</option>
+                            </select>
+                        </div>
+                    <div class="form__item--order">
+                        <label class="form__item--label--order">Quantity</label>
+                        <select class="input__order" name="quantity" required>
+                            <option value="" disabled selected>Select quantity</option>
+                            <option value="12">12</option>
+                            <option value="24">24</option>
+                            <option value="36">36</option>
+                            <option value="48">48</option>
+                            <option value="60">60</option>
+                            <option value="72">72</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                     <div class="form__item--order">
+                    <label class="form__item--label--order">Shape</label>
+                    <select class="input__order" name="shape" required>
+                        <option value="" disabled selected>Select shape</option>
+                        <option value="round">Round</option>
+                        <option value="square">Square</option>
+                        <option value="rectangle">Rectangle</option>
+                        <option value="heart">Heart</option>
+                        <option value="star">Star</option>
+                        <option value="oval">Oval</option>
+                        <option value="triangle">Triangle</option>
+                        <option value="hexagon">Hexagon</option>
+                    </select>
+                </div>
+                    <div class="form__item--order">
+                        <label class="form__item--label--order">Message</label>
+                        <textarea class="input__order" name="message" type="text" placeholder="Please specify if gluten-free. Note whether preference or allergy"></textarea>
+                    </div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                        </form>
+                        </div>
+                    </li>
+                    <li class="item">
+                            <img src="./assets/cake.png" class="item__img" alt="cakes">
+                            <div class="item__description">
+                                <h3 class="item__description--title">
+                                    Basic <br> Cakes
+                                </h3>
+                            </div>
+                        <p class="item__para-2">Cakes for a simple treat</p>
+                        <p class="price">$19.99 per layer</p>
+                         <div class="order__form--wrapper">
+                        <form class="order__form" data-product="Basic Cake" data-price="19.99" data-unit="layer">
+                        <div class="form__item--order">
+                            <label class="form__item--label--order">Flavor</label>
+                            <select class="input__order" name="flavor" required>
+                                <option value="" disabled selected>Select flavor</option>
+                                <option value="vanilla">Vanilla</option>
+                                <option value="chocolate">Chocolate</option>
+                                <option value="strawberry">Strawberry</option>
+                                <option value="mint">Mint</option>
+                                <option value="caramel">Caramel</option>
+                                <option value="mango">Mango</option>
+                                <option value="blueberry">Blueberry</option>
+                                <option value="lemon">Lemon</option>
+                            </select>
+                        </div>
+                    <div class="form__item--order">
+                        <label class="form__item--label--order">Quantity</label>
+                        <select class="input__order" name="quantity" required>
+                            <option value="" disabled selected>Select quantity</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                     <div class="form__item--order">
+                    <label class="form__item--label--order">Shape</label>
+                    <select class="input__order" name="shape">
+                        <option value="" disabled selected>Select shape</option>
+                        <option value="round">Round</option>
+                        <option value="square">Square</option>
+                        <option value="rectangle">Rectangle</option>
+                        <option value="heart">Heart</option>
+                    </select>
+                </div>
+                    <div class="form__item--order">
+                        <label class="form__item--label--order">Message</label>
+                        <textarea class="input__order" name="message" type="text" placeholder="Please specify if gluten-free. Note whether preference or allergy"></textarea>
+                    </div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                        </form>
+                        </div>
+                    </li>
+                    <li class="item">
+                            <img src="./assets/cake2.png" class="item__img" alt="cakes">
+                            <div class="item__description">
+                                <h3 class="item__description--title">
+                                    Occasion Cakes
+                                </h3>
+                            </div>
+                        <p class="item__para">Cakes for any celebration you have!</p>
+                        <p class="price">$29.99 per layer</p>
+                         <div class="order__form--wrapper">
+                        <form class="order__form" data-product="Occasion Cakes" data-price="29.99" data-unit="layer">
+                        <div class="form__item--order">
+                            <label class="form__item--label--order">Flavor</label>
+                            <select class="input__order" name="flavor" required>
+                                <option value="" disabled selected>Select flavor</option>
+                                <option value="vanilla">Vanilla</option>
+                                <option value="chocolate">Chocolate</option>
+                                <option value="strawberry">Strawberry</option>
+                                <option value="mint">Mint</option>
+                                <option value="caramel">Caramel</option>
+                                <option value="mango">Mango</option>
+                                <option value="blueberry">Blueberry</option>
+                                <option value="lemon">Lemon</option>
+                            </select>
+                        </div>
+                    <div class="form__item--order">
+                        <label class="form__item--label--order">Quantity</label>
+                        <select class="input__order" name="quantity" required>
+                            <option value="" disabled selected>Select quantity</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                     <div class="form__item--order">
+                    <label class="form__item--label--order">Shape</label>
+                    <select class="input__order" name="shape">
+                        <option value="" disabled selected>Select shape</option>
+                        <option value="round">Round</option>
+                        <option value="square">Square</option>
+                        <option value="rectangle">Rectangle</option>
+                        <option value="heart">Heart</option>
+                    </select>
+                </div>
+                    <div class="form__item--order">
+                        <label class="form__item--label--order">Message</label>
+                        <textarea class="input__order" name="message" type="text" placeholder="Please specify if gluten-free. Note whether preference or allergy"></textarea>
+                    </div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                        </form>
+                        </div>
+                    </li>
+                    <li class="item">
+                            <img src="./assets/cakepop2.png" class="item__img" alt="cakepops">
+                            <div class="item__description">
+                                <h3 class="item__description--title">
+                                    Basic Cakepops
+                                </h3>
+                            </div>
+                        <p class="item__para-2">Cakepops for a simple treat</p>
+                        <p class="price">$19.99 a dozen</p>
+                         <div class="order__form--wrapper">
+                        <form class="order__form" data-product="Basic Cakepops" data-price="19.99" data-unit="dozen">
+                        <div class="form__item--order">
+                            <label class="form__item--label--order">Flavor</label>
+                            <select class="input__order" name="flavor" required>
+                                <option value="" disabled selected>Select flavor</option>
+                                <option value="vanilla">Vanilla</option>
+                                <option value="chocolate">Chocolate</option>
+                                <option value="strawberry">Strawberry</option>
+                                <option value="mint">Mint</option>
+                                <option value="caramel">Caramel</option>
+                                <option value="mango">Mango</option>
+                                <option value="blueberry">Blueberry</option>
+                                <option value="lemon">Lemon</option>
+                            </select>
+                        </div>
+                    <div class="form__item--order">
+                        <label class="form__item--label--order">Quantity</label>
+                        <select class="input__order" name="quantity" required>
+                            <option value="" disabled selected>Select quantity</option>
+                            <option value="12">12</option>
+                            <option value="24">24</option>
+                            <option value="36">36</option>
+                            <option value="48">48</option>
+                            <option value="60">60</option>
+                            <option value="72">72</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                     <div class="form__item--order">
+                    <label class="form__item--label--order">Shape</label>
+                    <select class="input__order" name="shape">
+                        <option value="" disabled selected>Select shape</option>
+                        <option value="round">Round</option>
+                    </select>
+                </div>
+                    <div class="form__item--order">
+                        <label class="form__item--label--order">Message</label>
+                        <textarea class="input__order" name="message" type="text" placeholder="Please specify if gluten-free. Note whether preference or allergy"></textarea>
+                    </div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                        </form>
+                        </div>
+                    </li>
+                    <li class="item">
+                            <img src="./assets/cakepop6.png" class="item__img" alt="cakepops">
+                            <div class="item__description">
+                                <h3 class="item__description--title">
+                                    Occasion Cakepops
+                                </h3>
+                            </div>
+                        <p class="item__para">Cakepops for any celebration you have!</p>
+                        <p class="price">$24.99 a dozen</p>
+                        <div class="order__form--wrapper">
+                        <form class="order__form" data-product="Occasion Cakepops" data-price="24.99" data-unit="dozen">
+                        <div class="form__item--order">
+                            <label class="form__item--label--order">Flavor</label>
+                            <select class="input__order" name="flavor" required>
+                                <option value="" disabled selected>Select flavor</option>
+                                <option value="vanilla">Vanilla</option>
+                                <option value="chocolate">Chocolate</option>
+                                <option value="strawberry">Strawberry</option>
+                                <option value="mint">Mint</option>
+                                <option value="caramel">Caramel</option>
+                                <option value="mango">Mango</option>
+                                <option value="blueberry">Blueberry</option>
+                                <option value="lemon">Lemon</option>
+                            </select>
+                        </div>
+                    <div class="form__item--order">
+                        <label class="form__item--label--order">Quantity</label>
+                        <select class="input__order" name="quantity" required>
+                            <option value="" disabled selected>Select quantity</option>
+                            <option value="12">12</option>
+                            <option value="24">24</option>
+                            <option value="36">36</option>
+                            <option value="48">48</option>
+                            <option value="60">60</option>
+                            <option value="72">72</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                     <div class="form__item--order">
+                    <label class="form__item--label--order">Shape</label>
+                    <select class="input__order" name="shape">
+                        <option value="" disabled selected>Select shape</option>
+                        <option value="round">Round</option>
+                    </select>
+                </div>
+                    <div class="form__item--order">
+                        <label class="form__item--label--order">Message</label>
+                        <textarea class="input__order" name="message" type="text" placeholder="Please specify if gluten-free. Note whether preference or allergy"></textarea>
+                    </div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                        </form>
+                        </div>
+                    </li>
+                    <li class="item">
+                            <img src="./assets/cupcake6.jpg" class="item__img" alt="cupcakes">
+                            <div class="item__description">
+                                <h3 class="item__description--title">
+                                    Basic Cupcakes
+                                </h3>
+                            </div>
+                        <p class="item__para-2">Cupcakes for a simple treat</p>
+                        <p class="price">$14.99 a dozen</p>
+                         <div class="order__form--wrapper">
+                        <form class="order__form" data-product="Basic Cupcakes" data-price="14.99" data-unit="dozen">
+                        <div class="form__item--order">
+                            <label class="form__item--label--order">Flavor</label>
+                            <select class="input__order" name="flavor" required>
+                                <option value="" disabled selected>Select flavor</option>
+                                <option value="vanilla">Vanilla</option>
+                                <option value="chocolate">Chocolate</option>
+                                <option value="strawberry">Strawberry</option>
+                                <option value="mint">Mint</option>
+                                <option value="caramel">Caramel</option>
+                                <option value="mango">Mango</option>
+                                <option value="blueberry">Blueberry</option>
+                                <option value="lemon">Lemon</option>
+                            </select>
+                        </div>
+                    <div class="form__item--order">
+                        <label class="form__item--label--order">Quantity</label>
+                        <select class="input__order" name="quantity" required>
+                            <option value="" disabled selected>Select quantity</option>
+                            <option value="12">12</option>
+                            <option value="24">24</option>
+                            <option value="36">36</option>
+                            <option value="48">48</option>
+                            <option value="60">60</option>
+                            <option value="72">72</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                     <div class="form__item--order">
+                    <label class="form__item--label--order">Shape</label>
+                    <select class="input__order" name="shape">
+                        <option value="" disabled selected>Select shape</option>
+                        <option value="round">Round</option>
+                    </select>
+                </div>
+                    <div class="form__item--order">
+                        <label class="form__item--label--order">Message</label>
+                        <textarea class="input__order" name="message" type="text" placeholder="Please specify if gluten-free. Note whether preference or allergy"></textarea>
+                    </div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                        </form>
+                        </div>
+                    </li>
+                    <li class="item">
+                            <img src="./assets/cupcake3.jpg" class="item__img" alt="cupcakes">
+                            <div class="item__description">
+                                <h3 class="item__description--title">
+                                    Occasion Cupcakes
+                                </h3>
+                            </div>
+                        <p class="item__para">Cupcakes for any celebration you have!</p>
+                        <p class="price">$19.99 a dozen</p>
+                         <div class="order__form--wrapper">
+                        <form class="order__form" data-product="Occasion Cupcakes" data-price="19.99" data-unit="dozen">
+                        <div class="form__item--order">
+                            <label class="form__item--label--order">Flavor</label>
+                            <select class="input__order" name="flavor" required>
+                                <option value="" disabled selected>Select flavor</option>
+                                <option value="vanilla">Vanilla</option>
+                                <option value="chocolate">Chocolate</option>
+                                <option value="strawberry">Strawberry</option>
+                                <option value="mint">Mint</option>
+                                <option value="caramel">Caramel</option>
+                                <option value="mango">Mango</option>
+                                <option value="blueberry">Blueberry</option>
+                                <option value="lemon">Lemon</option>
+                            </select>
+                        </div>
+                    <div class="form__item--order">
+                        <label class="form__item--label--order">Quantity</label>
+                        <select class="input__order" name="quantity" required>
+                            <option value="" disabled selected>Select quantity</option>
+                            <option value="12">12</option>
+                            <option value="24">24</option>
+                            <option value="36">36</option>
+                            <option value="48">48</option>
+                            <option value="60">60</option>
+                            <option value="72">72</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                     <div class="form__item--order">
+                    <label class="form__item--label--order">Shape</label>
+                    <select class="input__order" name="shape">
+                        <option value="" disabled selected>Select shape</option>
+                        <option value="round">Round</option>
+                    </select>
+                </div>
+                    <div class="form__item--order">
+                        <label class="form__item--label--order">Message</label>
+                        <textarea class="input__order" name="message" type="text" placeholder="Please specify if gluten-free. Note whether preference or allergy"></textarea>
+                    </div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                        </form>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="index.js"></script>
+</html>
