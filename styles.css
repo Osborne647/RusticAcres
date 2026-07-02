@@ -198,6 +198,7 @@ textarea:focus {
   height: 100%;
   object-fit: cover;
   display: block;
+  filter: contrast(1.08) saturate(1.15) brightness(1.03) sharpen(0);
 }
 
 .nav__cart {
