@@ -885,6 +885,7 @@ footer {
     color: #888;
     margin-top: 3rem;
     font-size: 1.1rem;
+    margin-bottom: 32px;
 }
 .cart__summary {
     background: #fff;
