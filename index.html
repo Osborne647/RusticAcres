@@ -1,193 +1,246 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rustic Acres Baked Creations</title>
-    <script src="index.js"></script>
-    <link rel="stylesheet" href="styles.css">
     <script
       src="https://kit.fontawesome.com/662da0114d.js"
       crossorigin="anonymous"
     ></script>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init( "fuFqHm5g0Wi-p1K6a");
-   })();
-</script>
-  </head>
-  <body>
-    <section id="landing-page">
-          <nav class="nav__main">
-            <figure>
-              <img
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="nav">
+        <a href="#" class="nav-logo">
+            <div class="nav-logo-img">
+                <img
                 src="./Logo/logo 4.png"
                 class="company__logo"
                 alt="company logo"
               />
-            </figure>
-            <ul class="nav__link--list">
-              <li class="nav__link">
-                <a onClick="toggleModal()" class="nav__link--anchor link__hover-effect link__hover-effect--black">About</a>
-              </li>
-              <li class="nav__link">
-                <a href="#featured__items" class="nav__link--anchor link__hover-effect link__hover-effect--black"
-                  >Featured Items</a>
-              </li>
-              <li class="nav__link">
-                <a onClick="toggleModal()" class="nav__link--anchor link__hover-effect link__hover-effect--black">Contact</a>
-              </li>
-              <li class="nav__link">
-                <a href="OrderScreen.html" class="nav__link--anchor link__hover-effect link__hover-effect--black">Order</a>
-              </li>
-              <li class="nav__link">
-                <a href="cart.html" class="nav__link--anchor link__hover-effect link__hover-effect--black"
-                  >🛒 Cart <span id="cart__badge" class="cart__badge">0</span></a
-                >
-              </li>
-            </ul>
-          </nav>
-      <header>
-        <div class="container__header">
-          <div class="row__header">
-            <h1 class="title">Rustic Acres Baked Creations</h1>
-            <h2 class="sub--title">Homemade baked goods for every occasion!</h2>
-          </div>
-        </div>
-        <figure class="company__logo--wrapper">
-            <img src="./Logo/logo 4.png" class="company__logo--big">
-        </figure>
-      </header>
-      <a href="#">
-      <button class="mail__btn click" onClick="toggleModal()">
-            <i class="fa-solid fa-envelope"></i>
-        </button>
+            </div>
+            <div class="nav-brand">
+                <span class="nav-brand-name">RUSTIC ACRES</span>
+                <span class="nav-brand-sub">Baked Creations</span>
+            </div>
         </a>
-       <div class="modal">
-            <div class="modal__half modal__about">
-                <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
-                <h4 class="modal__sub-title modal__sub-title--about">Founder & Head Baker </h4>
-                <p class="modal__para">
-                    What started as a labor of love in 1991, baking for family gatherings and special occasions, 
-                    grew into something bigger. By 1998, Cakes by Racheal Ruth was born, bringing homemade sweetness to the community for over two decades. 
-                    In 2025, we rebranded as Rustic Acres Baked Creations, a fresh name with the same heart and passion behind every dessert. 
-                    As a home bakery, we take pride in the personal touch that comes with every order, treating each creation like it's for our own family. 
-                    From elegant wedding cakes to playful cake pops, custom cupcakes to holiday cookies, if you can dream it, we can bake it. No creation is too big or too small. 
-                    Every dessert is made from scratch with care, creativity, and over 30 years of passion behind it.
-                </p> 
-            </div>
-            <div class="modal__half modal__contact">
-                <i class="fa-solid fa-xmark modal__exit click" onClick="toggleModal()"></i>
-                <h3 class="modal__title modal__title--contact">Let's talk!</h3>
-                <h4 class="modal__sub-title modal__sub-title--contact">For any questions, send me a message!</h4>
-                <form id="contact__form" onSubmit="contact(event)">
-                    <div class="form__item">
-                        <label class="form__item--label">Name</label>
-                        <input class="input" name="user_name" type="text" required></input>
-                    </div>
-                    <div class="form__item">
-                        <label class="form__item--label">Email</label>
-                        <input class="input" name="user_email" type="email" required></input>
-                    </div>
-                    <div class="form__item">
-                        <label class="form__item--label">Message</label>
-                        <textarea class="input" name="message" type="text" required></textarea>
-                    </div>
-                    <button id="contact__submit" class="form__submit">Email me!</button>
-                </form>
-                <div class="modal__overlay modal__overlay--loading">
-                    <i class="fa-solid fa-spinner"></i>
-                </div>
-                <div class="modal__overlay modal__overlay--success">
-                    Thanks for the message! Looking forward to speaking to you soon.
-                </div>
-            </div>
+        <ul class="nav-links">
+            <li class="active"><a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Home</a></li>
+            <li><a href="#menu" class="nav__link--anchor link__hover-effect link__hover-effect--black">Menu</a></li>
+            <li><a href="./gallery.html" class="nav__link--anchor link__hover-effect link__hover-effect--black">Gallery</a></li>
+            <li class="nav__link">
+    <a href="javascript:void(0)" onclick="toggleAbout()" class="nav__link--anchor link__hover-effect link__hover-effect--black">About</a>
+</li>
+            <li class="nav__link">
+    <a href="javascript:void(0)" onclick="toggleContact()" class="nav__link--anchor link__hover-effect link__hover-effect--black">Contact</a>
+</li>
+            <li><a href="./orderscreen.html" class="nav__link--anchor link__hover-effect link__hover-effect--black">Order</a></li>
+            <li><a href="cart.html" class="nav-cart">
+            🛒 <span class="cart-badge" id="cart-badge">0</span>
+        </a>
+        <button class="nav-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Artisan Baking from the Heart of the Farm</h1>
+            <p class="hero-subtitle">Custom cakes, decorated cookies, and bite-sized treats crafted for your sweetest occasions.</p>
+            <a href="./orderscreen.html" class="hero-btn">
+                Order Now
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8l4 4-4 4M8 12h8"/></svg>
+            </a>
+        </div>
     </section>
-    <section id="featured__items">
-        <div class="container__featured">
-            <div class="row row__featured">
-                <h1 class="section__title">
-                    Featured Items
-                </h1>
-                <ul class="featured__list">
-                    <li class="feature">
-                        <div class="feature__wrapper"><a href="cookies.html">
-                            <img src="./Assets/cookie4.png" class="feature__img" alt="cookies">
-                            <div class="feature__wrapper--bg"></div>
-                            <div class="feature__description">
-                                <h3 class="feature__description--title">
-                                    Cookies
-                                </h3></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="feature">
-                        <div class="feature__wrapper"><a href="cakes.html">
-                            <img src="./assets/cake2.png" class="feature__img" alt="cakes">
-                            <div class="feature__wrapper--bg"></div>
-                            <div class="feature__description">
-                                <h3 class="feature__description--title">
-                                    Cakes
-                                </h3></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="feature">
-                        <div class="feature__wrapper"><a href="cakepops.html">
-                            <img src="./assets/cakepop9.png" class="feature__img" alt="cakepops">
-                            <div class="feature__wrapper--bg"></div>
-                            <div class="feature__description">
-                                <h3 class="feature__description--title">
-                                    Cakepops
-                                </h3></a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="feature">
-                        <div class="feature__wrapper"><a href="cupcakes.html">
-                            <img src="./assets/cupcakes.png" class="feature__img" alt="cupcakes">
-                            <div class="feature__wrapper--bg"></div>
-                            <div class="feature__description">
-                                <h3 class="feature__description--title">
-                                    Cupcakes
-                                </h3></a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+
+    <!-- WHAT WE MAKE -->
+    <section class="products" id="menu">
+        <div class="products-inner">
+            <h2 class="section-title">What We Make</h2>
+            <div class="section-divider"></div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-card-img"><a href="./gallery.html">
+                        <img src="../Assets/Cakes/cake9.png" alt="Custom decorated wedding cake">
+                    </div>
+                    <h3>Cakes</h3></a>
+                    <p>Beautifully decorated cakes for every celebration. From towering wedding masterpieces to fun birthday themes, 
+                        each one is crafted from scratch with quality ingredients and an eye for detail.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-card-img"><a href="./gallery.html">
+                        <img src="../Assets/Cookies/cookie4.png" alt="Hand-decorated cookies">
+                    </div>
+                    <h3>Cookies</h3></a>
+                    <p>Chewy, crispy, and perfectly sweet. Every cookie is hand-decorated with royal icing and baked with love, 
+                        whether it's a themed birthday set or elegant favors for your next event.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-card-img"><a href="./gallery.html">
+                        <img src="../Assets/Cakepops/cakepop6.png" alt="Colorful cake pops">
+                    </div>
+                    <h3>Cake Pops</h3></a>
+                    <p>Bite-sized treats in a variety of flavors, hand-dipped and decorated to match any theme. 
+                        Perfect for party favors, gift boxes, or adding a sweet touch to your dessert table.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-card-img"><a href="./gallery.html">
+                        <img src="../Assets/Cupcakes/cupcake.png" alt="Cupcakes with buttercream">
+                    </div>
+                    <h3>Cupcakes</h3></a>
+                    <p>Fluffy and flavorful cupcakes topped with our signature buttercream. Customized to match any theme or color scheme, 
+                        they're the perfect sweet addition to birthdays, showers, and everything in between.</p>
+                </div>
             </div>
         </div>
     </section>
-    <footer>
-        <div class="container">
-            <div class="row footer__row">
-                <figure>
-                    <img src="./Logo/logo 4.png" class="company__logo--footer" alt="company logo">
-                </figure>
-                <div class="footer__social--list">
-                    <a href="https://www.facebook.com/profile.php?id=100092244646668&rdid=GQWjMU5srxQwqT6W&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1dHfpQ5xDz%2F#" target="_blank" class="
-                    footer__social--link
-                    link__hover-effect
-                    link__hover-effect--white">
-                Facebook</a>
-                    <a href="#" onClick="toggleModal()" class="
-                    footer__social--link
-                    link__hover-effect
-                    link__hover-effect--white">
-                Email</a>
-                    <a href="https://www.tiktok.com/@rachealjohnston5?_r=1&_t=ZT-97NESKxbb1q" class="
-                    footer__social--link
-                    link__hover-effect
-                    link__hover-effect--white" target="_blank">
-                Tiktok</a>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="testimonials-inner">
+            <h2 class="section-title">Our Happy Customers</h2>
+            <div class="section-divider"></div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote-icon">&ldquo;</div>
+                    <p>"I had ordered cupcakes and a 6 “ wedding cake!! OMGGGG, everything tasted so good and was decorated so well everyone enjoyed them as well!! 
+                        She delivered and set it all up!! I am very picky when it comes to cake. I will say I will definitely be using Rustic Acres Baked Creations 
+                        for all my events!!! Thank again for making these!!"</p>
+                    <div class="testimonial-author">
+                        &mdash; Debbie Steele <span class="verified">&#10003;</span>
+                    </div>
                 </div>
-                <p class="disclaimer">**Disclaimer: This is a Cottage Bakery and operates under Missouri State Cottage Law.**</p>
-                <div class="footer__copyright">Copyright © 2026 Rustic Acres Baked Creations</div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote-icon">&ldquo;</div>
+                    <p>"Rachel designed a custom birthday cake for my grandson's first birthday, along with a smaller cake for his cake smash. She also created a wedding 
+                        cake for my daughter with a mudding theme. Her cakes consistently showcase exceptional beauty and flavor. For your next event, consider choosing Rustic Acres
+                         for a truly memorable experience."</p>
+                    <div class="testimonial-author">
+                        &mdash; Cameron Roark <span class="verified">&#10003;</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote-icon">&ldquo;</div>
+                    <p>"Racheal makes the BEST cakes. I've ordered from her for events religiously for the last 6 years and she has never once disappointed me. 
+                        Her cakes and cupcakes are always DELICIOUS And absolutely beautiful."</p>
+                    <div class="testimonial-author">
+                        &mdash; Kaitlyn Rowlett <span class="verified">&#10003;</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote-icon">&ldquo;</div>
+                    <p>"Awesome cakes! We’ve ordered lots over the years and have always been super impressed and happy with our orders"</p>
+                    <div class="testimonial-author">
+                        &mdash; Jenny Winemiller <span class="verified">&#10003;</span>
+                    </div>
+                </div>
             </div>
+        </div>
+        <div class="back-to-top-wrapper">
+    <a href="#" class="btn-back-to-top">
+        <i class="fa-solid fa-arrow-up"></i> Back to Top
+    </a>
+</div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contact">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>
+                    (816)-536-7039<br>
+                    rusticacresbakery.com
+                </p>
+            </div>
+            <div class="footer-col">
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="footer-socials">
+                    <a href="https://www.tiktok.com/@rachealjohnston5?_r=1&_t=ZT-97NESKxbb1q" target="_blank" aria-label="Tiktok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100092244646668&rdid=GQWjMU5srxQwqT6W&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1dHfpQ5xDz%2F#" target="_blank" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="#" aria-label="Email" onclick="toggleContact()">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Rustic Acres Baked Creations. All rights reserved.</p>
         </div>
     </footer>
-  </body>
+    <!-- ABOUT MODAL -->
+<div class="modal-overlay" id="about-modal">
+    <div class="modal">
+        <button class="modal-close" onclick="toggleAbout()">&times;</button>
+        <h2>About Rustic Acres</h2>
+        <p>What started as a labor of love in 1991, baking for family gatherings and special occasions, grew into something bigger. 
+            By 1998, Cakes by Racheal Ruth was born, bringing homemade sweetness to the community for over two decades. In 2025, we rebranded as Rustic Acres Baked Creations, 
+            a fresh name with the same heart and passion behind every dessert. As a home bakery, we take pride in the personal touch that comes with every order, treating each 
+            creation like it's for our own family. From elegant wedding cakes to playful cake pops, custom cupcakes to holiday cookies, if you can dream it, we can bake it. 
+            No creation is too big or too small. Every dessert is made from scratch with care, creativity, and over 30 years of passion behind it.</p>
+        <p class="modal-disclaimer">*Rustic Acres operates under Missouri State Cottage Food Law.*</p>
+    </div>
+</div>
+
+<!-- CONTACT MODAL -->
+<div class="modal-overlay" id="contact-modal">
+    <div class="modal">
+        <button class="modal-close" onclick="toggleContact()">&times;</button>
+        <h2>Contact Us</h2>
+        <p>Have questions or a special request? Reach out and we'll get back to you shortly.</p>
+        <form class="contact-form" onsubmit="handleContact(event)">
+            <div class="form-field">
+                <label>Name</label>
+                <input type="text" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-field">
+                <label>Email</label>
+                <input type="email" name="email" required placeholder="you@example.com">
+            </div>
+            <div class="form-field">
+                <label>Message</label>
+                <textarea name="message" required placeholder="Tell us what you're looking for..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+    </div>
+</div>
+<script>
+    function toggleAbout() {
+        document.getElementById('about-modal').classList.toggle('active');
+    }
+
+    function toggleContact() {
+        document.getElementById('contact-modal').classList.toggle('active');
+    }
+
+    // Close on overlay click
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('modal-overlay')) {
+            e.target.classList.remove('active');
+        }
+    });
+</script>
+</body>
 </html>

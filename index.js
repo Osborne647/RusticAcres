@@ -1,12 +1,21 @@
-let isModalOpen = false;
-function toggleModal() {
-  if (isModalOpen) {
-    isModalOpen = false;
-    return document.body.classList.remove("modal--open");
-  }
-  isModalOpen = true;
-  document.body.classList += " modal--open";
+function toggleAbout() {
+    const modal = document.getElementById('about-modal');
+    if (modal) modal.classList.toggle('active');
 }
+
+function toggleContact() {
+    const modal = document.getElementById('contact-modal');
+    if (modal) modal.classList.toggle('active');
+}
+
+// Close modals when clicking the overlay background
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            overlay.classList.remove('active');
+        }
+    });
+});
 
 function contact(event) {
   event.preventDefault();
@@ -43,62 +52,3 @@ document.addEventListener('DOMContentLoaded', function() {
     slides[current].classList.add('active');
   }, 5000);
 });
-
-document.querySelectorAll('.order__form').forEach(function(form) {
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const flavor = form.querySelector('[name="flavor"]');
-        const quantity = form.querySelector('[name="quantity"]');
-        const shape = form.querySelector('[name="shape"]');
-        const message = form.querySelector('[name="message"]');
-
-        if (!flavor.value || !quantity.value || !shape.value) {
-            return;
-        }
-
-        const item = {
-            product: form.dataset.product,
-            price: form.dataset.price,
-            unit: form.dataset.unit,
-            flavor: flavor.value,
-            quantity: quantity.value,
-            shape: shape.value,
-            message: message.value
-        };
-
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart.push(item);
-        localStorage.setItem('cart', JSON.stringify(cart));
-
-        const btn = form.querySelector('.add-to-cart-btn');
-        btn.textContent = '✓';
-        btn.disabled = true;
-
-        setTimeout(function() {
-            btn.textContent = 'Add to Cart';
-            btn.disabled = false;
-            flavor.value = '';
-            quantity.value = '';
-            shape.value = '';
-            message.value = '';
-        }, 1000);
-
-       if (typeof updateCartBadge === 'function') updateCartBadge();
-    });
-});
-
-function updateCartBadge() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const badge = document.getElementById('cart__badge');
-    if (cart.length > 0) {
-        badge.textContent = cart.length;
-        badge.classList.add('active');
-    } else {
-        badge.textContent = '0';
-        badge.classList.remove('active');
-    }
-}
-
-// Run on page load
-updateCartBadge();
