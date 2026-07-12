@@ -106,8 +106,6 @@
 </div>
 
     <script>
-
-       // Update badge count
 function updateBadge() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     document.getElementById('cart-badge').textContent = cart.length;
@@ -136,31 +134,40 @@ function renderCart() {
 
     cart.forEach((item, index) => {
         let itemTotal;
-        let pricingLabel;
 
         if (item.tiered) {
             itemTotal = parseFloat(item.price).toFixed(2);
-            pricingLabel = `${item.quantity} - $${item.price}`;
         } else if (item.unit === 'dozen') {
             const dozens = parseInt(item.quantity) / 12;
             itemTotal = (parseFloat(item.price) * dozens).toFixed(2);
-            pricingLabel = `${dozens.toFixed(1)} dozen × $${item.price}/doz`;
         } else {
             itemTotal = (parseFloat(item.price) * parseInt(item.quantity)).toFixed(2);
-            pricingLabel = `${item.quantity} layer(s) × $${item.price}/layer`;
         }
 
         subtotal += parseFloat(itemTotal);
-        totalItems += parseInt(item.quantity);
+        totalItems += parseInt(item.quantity) || 1;
+
+        // Build detail lines
+        let details = [];
+        if (item.flavor) details.push('<strong>Flavor:</strong> ' + item.flavor);
+        if (item.style) details.push('<strong>Style:</strong> ' + item.style);
+        if (item.tiers) details.push('<strong>Tiers:</strong> ' + item.tiers);
+        if (item.sizeLabel) details.push('<strong>Size:</strong> ' + item.sizeLabel);
+        if (item.size) details.push('<strong>Size:</strong> ' + item.size);
+        if (item.shape) details.push('<strong>Shape:</strong> ' + item.shape);
+        if (item.icing) details.push('<strong>Icing:</strong> ' + item.icing);
+        if (item.fillingText) details.push('<strong>Filling:</strong> ' + item.fillingText + ' (+$' + item.fillingUpcharge + ')');
+        if (item.extraIcing > 0) details.push('<strong>Extra Icing Cups:</strong> ' + item.extraIcing + ' (+$' + item.extraIcingTotal + ')');
+        if (item.quantityText) details.push('<strong>Qty:</strong> ' + item.quantityText);
+        else if (item.quantity) details.push('<strong>Qty:</strong> ' + item.quantity);
 
         const div = document.createElement('div');
         div.className = 'cart-item';
         div.innerHTML = `
             <div class="cart-item-details">
                 <h3 class="cart-item-product">${item.product}</h3>
-                <p class="cart-item-meta">Flavor: ${item.flavor}${item.tiers ? ` · Tiers: ${item.tiers}` : (item.shape ? ` · Shape: ${item.shape}` : '')} · Size: ${item.quantity}${item.filling && item.filling !== 'none' ? ` · Filling: ${item.filling}` : ''}</p>
-                <p class="cart-item-pricing">${pricingLabel}</p>
-                ${item.message ? `<p class="cart-item-message">"${item.message}"</p>` : ''}
+                <p class="cart-item-meta">${details.join(' · ')}</p>
+                ${item.message ? '<p class="cart-item-message">"' + item.message + '"</p>' : ''}
             </div>
             <div class="cart-item-right">
                 <span class="cart-item-price">$${itemTotal}</span>
