@@ -1,1 +1,0 @@
-HTML, CSS and JS website for a local bakery
