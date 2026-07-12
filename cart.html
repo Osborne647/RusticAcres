@@ -107,83 +107,86 @@
 
     <script>
 
-        // Update badge count
-        function updateBadge() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            document.getElementById('cart-badge').textContent = cart.length;
+       // Update badge count
+function updateBadge() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    document.getElementById('cart-badge').textContent = cart.length;
+}
+
+function renderCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const container = document.getElementById('cart-items');
+    const summary = document.getElementById('cart-summary');
+    container.innerHTML = '';
+
+    if (cart.length === 0) {
+        container.innerHTML = `
+            <div class="cart-empty">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <p>Your cart is empty.</p>
+                <a href="OrderScreen.html" class="btn-checkout">Start Ordering</a>
+            </div>`;
+        summary.style.display = 'none';
+        return;
+    }
+
+    summary.style.display = 'block';
+    let subtotal = 0;
+    let totalItems = 0;
+
+    cart.forEach((item, index) => {
+        let itemTotal;
+        let pricingLabel;
+
+        if (item.tiered) {
+            itemTotal = parseFloat(item.price).toFixed(2);
+            pricingLabel = `${item.quantity} - $${item.price}`;
+        } else if (item.unit === 'dozen') {
+            const dozens = parseInt(item.quantity) / 12;
+            itemTotal = (parseFloat(item.price) * dozens).toFixed(2);
+            pricingLabel = `${dozens.toFixed(1)} dozen × $${item.price}/doz`;
+        } else {
+            itemTotal = (parseFloat(item.price) * parseInt(item.quantity)).toFixed(2);
+            pricingLabel = `${item.quantity} layer(s) × $${item.price}/layer`;
         }
 
-        function renderCart() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const container = document.getElementById('cart-items');
-            const summary = document.getElementById('cart-summary');
-            container.innerHTML = '';
+        subtotal += parseFloat(itemTotal);
+        totalItems += parseInt(item.quantity);
 
-            if (cart.length === 0) {
-                container.innerHTML = `
-                    <div class="cart-empty">
-                        <i class="fa-solid fa-basket-shopping"></i>
-                        <p>Your cart is empty.</p>
-                        <a href="OrderScreen.html" class="btn-checkout">Start Ordering</a>
-                    </div>`;
-                summary.style.display = 'none';
-                return;
-            }
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+            <div class="cart-item-details">
+                <h3 class="cart-item-product">${item.product}</h3>
+                <p class="cart-item-meta">Flavor: ${item.flavor}${item.tiers ? ` · Tiers: ${item.tiers}` : (item.shape ? ` · Shape: ${item.shape}` : '')} · Size: ${item.quantity}${item.filling && item.filling !== 'none' ? ` · Filling: ${item.filling}` : ''}</p>
+                <p class="cart-item-pricing">${pricingLabel}</p>
+                ${item.message ? `<p class="cart-item-message">"${item.message}"</p>` : ''}
+            </div>
+            <div class="cart-item-right">
+                <span class="cart-item-price">$${itemTotal}</span>
+                <button class="cart-remove-btn" data-index="${index}">Remove</button>
+            </div>
+        `;
+        container.appendChild(div);
+    });
 
-            summary.style.display = 'block';
-            let subtotal = 0;
-            let totalItems = 0;
+    document.getElementById('cart-subtotal').textContent = '$' + subtotal.toFixed(2);
+    document.getElementById('cart-item-count').textContent = totalItems;
+    document.getElementById('cart-total').textContent = '$' + subtotal.toFixed(2);
+}
 
-            cart.forEach((item, index) => {
-                let itemTotal;
-                let pricingLabel;
+document.getElementById('cart-items').addEventListener('click', function(e) {
+    if (e.target.classList.contains('cart-remove-btn')) {
+        const index = e.target.dataset.index;
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+        updateBadge();
+    }
+});
 
-                if (item.unit === 'dozen') {
-                    const dozens = parseInt(item.quantity) / 12;
-                    itemTotal = (parseFloat(item.price) * dozens).toFixed(2);
-                    pricingLabel = `${dozens.toFixed(1)} dozen × $${item.price}/doz`;
-                } else {
-                    itemTotal = (parseFloat(item.price) * parseInt(item.quantity)).toFixed(2);
-                    pricingLabel = `${item.quantity} layer(s) × $${item.price}/layer`;
-                }
-
-                subtotal += parseFloat(itemTotal);
-                totalItems += parseInt(item.quantity);
-
-                const div = document.createElement('div');
-                div.className = 'cart-item';
-                div.innerHTML = `
-                    <div class="cart-item-details">
-                        <h3 class="cart-item-product">${item.product}</h3>
-                        <p class="cart-item-meta">Flavor: ${item.flavor} · Shape: ${item.shape || 'N/A'} · Qty: ${item.quantity}</p>
-                        <p class="cart-item-pricing">${pricingLabel}</p>
-                        ${item.message ? `<p class="cart-item-message">"${item.message}"</p>` : ''}
-                    </div>
-                    <div class="cart-item-right">
-                        <span class="cart-item-price">$${itemTotal}</span>
-                        <button class="cart-remove-btn" data-index="${index}">Remove</button>
-                    </div>
-                `;
-                container.appendChild(div);
-            });
-
-            document.getElementById('cart-subtotal').textContent = '$' + subtotal.toFixed(2);
-            document.getElementById('cart-item-count').textContent = totalItems;
-            document.getElementById('cart-total').textContent = '$' + subtotal.toFixed(2);
-        }
-
-        document.getElementById('cart-items').addEventListener('click', function(e) {
-            if (e.target.classList.contains('cart-remove-btn')) {
-                const index = e.target.dataset.index;
-                let cart = JSON.parse(localStorage.getItem('cart')) || [];
-                cart.splice(index, 1);
-                localStorage.setItem('cart', JSON.stringify(cart));
-                renderCart();
-                updateBadge();
-            }
-        });
-
-        document.getElementById('cart-clear').addEventListener('click', function() {
+document.getElementById('cart-clear').addEventListener('click', function() {
     document.getElementById('clear-modal').classList.add('active');
 });
 
@@ -198,12 +201,12 @@ function confirmClear() {
     closeClearModal();
 }
 
-        document.getElementById('cart-checkout').addEventListener('click', function() {
-            alert('Proceeding to checkout!');
-        });
+document.getElementById('cart-checkout').addEventListener('click', function() {
+    alert('Proceeding to checkout!');
+});
 
-        renderCart();
-        updateBadge();
+renderCart();
+updateBadge();
     </script>
 </body>
 </html>

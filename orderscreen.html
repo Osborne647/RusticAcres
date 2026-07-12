@@ -60,33 +60,30 @@
                 <div class="item-card">
                     <img src="./assets/Cookies/cookie4.png" class="item-card-img" alt="Basic Cookies">
                     <div class="item-card-body">
-                        <h3 class="item-card-name">Basic Cookies</h3>
+                        <h3 class="item-card-name">Royal Iced Cut Out Cookies</h3>
                         <p class="item-card-desc">Simple, delicious cookies in your choice of flavor and shape. A sweet treat for any day.</p>
-                        <p class="item-card-price">$14.99 a dozen</p>
-                        <form class="order-form" data-product="Basic Cookies" data-price="14.99" data-unit="dozen">
+                        <p class="item-card-price">$38.00 – $48.00 a dozen</p>
+                        <form class="order-form" data-product="Royal Iced Cut Out Sugar Cookies" data-unit="dozen">
                             <div class="form-field">
-                                <label>Flavor</label>
-                                <select name="flavor" required>
-                                    <option value="" disabled selected>Select flavor</option>
-                                    <option value="vanilla">Vanilla</option>
-                                    <option value="chocolate">Chocolate</option>
-                                    <option value="strawberry">Strawberry</option>
-                                    <option value="mint">Mint</option>
-                                    <option value="caramel">Caramel</option>
-                                    <option value="blueberry">Blueberry</option>
-                                    <option value="lemon">Lemon</option>
+                                <label>Style</label>
+                                <select name="style" required class="tiered-price-select"
+                                    data-prices='{"standard":"38.00","detailed":"43.00","premium":"48.00"}'>
+                                    <option value="" disabled selected>Select style</option>
+                                    <option value="standard">Standard Design - $38.00/doz</option>
+                                    <option value="detailed">Detailed Design - $43.00/doz</option>
+                                    <option value="premium">Premium Design - $48.00/doz</option>
                                 </select>
                             </div>
                             <div class="form-field">
                                 <label>Quantity</label>
                                 <select name="quantity" required>
                                     <option value="" disabled selected>Select quantity</option>
-                                    <option value="12">12</option>
-                                    <option value="24">24</option>
-                                    <option value="36">36</option>
-                                    <option value="48">48</option>
-                                    <option value="60">60</option>
-                                    <option value="72">72</option>
+                                    <option value="12">1 dozen</option>
+                                    <option value="24">2 dozen</option>
+                                    <option value="36">3 dozen</option>
+                                    <option value="48">4 dozen</option>
+                                    <option value="60">5 dozen</option>
+                                    <option value="72">6 dozen</option>
                                     <option value="100">100</option>
                                 </select>
                             </div>
@@ -114,10 +111,120 @@
                 <div class="item-card">
                     <img src="./assets/Cookies/cookie5.jpg" class="item-card-img" alt="Occasion Cookies">
                     <div class="item-card-body">
+                        <h3 class="item-card-name">Buttercream Iced Sugar Cookies</h3>
+                        <p class="item-card-desc">Hand-decorated royal icing cookies designed for your celebration, from birthdays to weddings.</p>
+                        <p class="item-card-price">$25.00 – $35.00 a dozen</p>
+                        <form class="order-form" data-product="Buttercream Iced Sugar Cookies" data-unit="dozen">
+                            <div class="form-field">
+                                <label>Style</label>
+                                <select name="style" required class="tiered-price-select"
+                                    data-prices='{"standard":"25.00","detailed":"30.00","premium":"35.00"}'>
+                                    <option value="" disabled selected>Select style</option>
+                                    <option value="standard">Standard Design - $25.00/doz</option>
+                                    <option value="detailed">Detailed Design - $30.00/doz</option>
+                                    <option value="premium">Premium Design - $35.00/doz</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Quantity</label>
+                                <select name="quantity" required>
+                                    <option value="" disabled selected>Select quantity</option>
+                                    <option value="12">1 dozen</option>
+                                    <option value="24">2 dozen</option>
+                                    <option value="36">3 dozen</option>
+                                    <option value="48">4 dozen</option>
+                                    <option value="60">5 dozen</option>
+                                    <option value="72">6 dozen</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Shape</label>
+                                <select name="shape" required>
+                                    <option value="" disabled selected>Select shape</option>
+                                    <option value="round">Round</option>
+                                    <option value="square">Square</option>
+                                    <option value="rectangle">Rectangle</option>
+                                    <option value="heart">Heart</option>
+                                    <option value="star">Star</option>
+                                    <option value="oval">Oval</option>
+                                    <option value="triangle">Triangle</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Message</label>
+                                <textarea name="message" placeholder="Describe your theme, colors, or design. Specify if gluten-free (preference or allergy)."></textarea>
+                            </div>
+                            <button type="submit" class="btn-add-cart">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <img src="./assets/Cookies/cookie5.jpg" class="item-card-img" alt="Occasion Cookies">
+                    <div class="item-card-body">
+                        <h3 class="item-card-name">Drizzled Iced or Blank Sugar Cookies</h3>
+                        <p class="item-card-desc">Hand-decorated royal icing cookies designed for your celebration, from birthdays to weddings.</p>
+                        <p class="item-card-price">$20.00 a dozen</p>
+                        <form class="order-form" data-product="Drizzled Iced or Blank Sugar Cookies" data-price="20.00" data-unit="dozen">
+                            <div class="form-field">
+                                <label>Style</label>
+                                <select name="style" required>
+                                    <option value="" disabled selected>Select style</option>
+                                    <option value="drizzled">Drizzled Iced</option>
+                                    <option value="blank">Blank (undecorated)</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Quantity</label>
+                                <select name="quantity" required>
+                                    <option value="" disabled selected>Select quantity</option>
+                                    <option value="12">1 dozen</option>
+                                    <option value="24">2 dozen</option>
+                                    <option value="36">3 dozen</option>
+                                    <option value="48">4 dozen</option>
+                                    <option value="60">5 dozen</option>
+                                    <option value="72">6 dozen</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Shape</label>
+                                <select name="shape" required>
+                                    <option value="" disabled selected>Select shape</option>
+                                    <option value="round">Round</option>
+                                    <option value="square">Square</option>
+                                    <option value="rectangle">Rectangle</option>
+                                    <option value="heart">Heart</option>
+                                    <option value="star">Star</option>
+                                    <option value="oval">Oval</option>
+                                    <option value="triangle">Triangle</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Message</label>
+                                <textarea name="message" placeholder="Describe your theme, colors, or design. Specify if gluten-free (preference or allergy)."></textarea>
+                            </div>
+                            <button type="submit" class="btn-add-cart">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <img src="./assets/Cookies/cookie5.jpg" class="item-card-img" alt="Occasion Cookies">
+                    <div class="item-card-body">
                         <h3 class="item-card-name">Occasion Cookies</h3>
                         <p class="item-card-desc">Hand-decorated royal icing cookies designed for your celebration, from birthdays to weddings.</p>
-                        <p class="item-card-price">$19.99 a dozen</p>
-                        <form class="order-form" data-product="Occasion Cookies" data-price="19.99" data-unit="dozen">
+                        <p class="item-card-price">Starting at $15.00 a dozen</p>
+                        <form class="order-form" data-product="Occasion Cookies" data-unit="dozen">
+                            <div class="form-field">
+                                <label>Size</label>
+                                <select name="size" required class="tiered-price-select"
+                                    data-prices='{"small":"15.00","regular":"20.00","giant":"30.00"}'>
+                                    <option value="" disabled selected>Select size</option>
+                                    <option value="small">1½" Small Bites - $15.00/doz</option>
+                                    <option value="regular">3" Regular - $20.00/doz</option>
+                                    <option value="giant">5" Giant - $30.00/doz</option>
+                                </select>
+                            </div>
                             <div class="form-field">
                                 <label>Flavor</label>
                                 <select name="flavor" required>
@@ -135,12 +242,12 @@
                                 <label>Quantity</label>
                                 <select name="quantity" required>
                                     <option value="" disabled selected>Select quantity</option>
-                                    <option value="12">12</option>
-                                    <option value="24">24</option>
-                                    <option value="36">36</option>
-                                    <option value="48">48</option>
-                                    <option value="60">60</option>
-                                    <option value="72">72</option>
+                                    <option value="12">1 dozen</option>
+                                    <option value="24">2 dozen</option>
+                                    <option value="36">3 dozen</option>
+                                    <option value="48">4 dozen</option>
+                                    <option value="60">5 dozen</option>
+                                    <option value="72">6 dozen</option>
                                     <option value="100">100</option>
                                 </select>
                             </div>
@@ -165,6 +272,78 @@
                         </form>
                     </div>
                 </div>
+                <div class="item-card">
+                    <img src="./assets/Cookies/cookie5.jpg" class="item-card-img" alt="Occasion Cookies">
+                    <div class="item-card-body">
+                        <h3 class="item-card-name">Occasion Cookies</h3>
+                        <p class="item-card-desc">Hand-decorated royal icing cookies designed for your celebration, from birthdays to weddings.</p>
+                        <p class="item-card-price">$15.00 a container</p>
+                        <form class="order-form" data-product="Cookie Dunkers" data-price="15.00" data-unit="container">
+                            <div class="form-field">
+                                    <label>Flavor</label>
+                                    <select name="flavor" required>
+                                        <option value="" disabled selected>Select flavor</option>
+                                        <option value="vanilla">Cray-Cray Monster (Mr. & Mrs. Versions)</option>
+                                        <option value="chocolate">Strawberries & Cream</option>
+                                        <option value="strawberry">Lemon</option>
+                                        <option value="mint">Chocolate Chip</option>
+                                        <option value="caramel">Peanut Butter Bliss</option>
+                                        <option value="blueberry">Chocolate Peanut Butter</option>
+                                        <option value="lemon">Chocolate-Chocolate Chunk</option>
+                                        <option value="strawberry">Sugar</option>
+                                        <option value="mint">Red Velvet & Cream</option>
+                                        <option value="caramel">Hot Cocoa Bomb</option>
+                                        <option value="blueberry">Smores</option>
+                                        <option value="lemon">Oatmeal</option>
+                                        <option value="caramel">Cinn-A-Doodle</option>
+                                        <option value="blueberry">Snicker Doodle</option>
+                                        <option value="lemon">Iced Soft Sugar Cookie</option>
+                                        <option value="lemon">Raspberry Chip Blondies</option>
+                                        <option value="lemon">Lemon-Blueberry</option>
+                                        <option value="caramel">Lemon-Raspberry</option>
+                                        <option value="blueberry">Chocolate Mint</option>
+                                        <option value="lemon">Strawberry Shortcake</option>
+                                        <option value="lemon">Kitchen Sink</option>
+                                    </select>
+                                </div>
+                            <div class="form-field">
+                                <label>Icing Flavor</label>
+                                <select name="icing" required>
+                                    <option value="" disabled selected>Select icing</option>
+                                    <option value="vanilla">Classic American Buttercream</option>
+                                    <option value="chocolate">Chocolate American Buttercream</option>
+                                    <option value="strawberry">Lemon American Buttercream</option>
+                                    <option value="cream-cheese">Chocolate</option>
+                                    <option value="caramel">Strawberry and Lemon</option>
+                                    <option value="lemon">Cream Cheese in Chocolate</option>
+                                    <option value="vanilla">Classic</option>
+                                    <option value="chocolate">Chocolate</option>
+                                    <option value="strawberry">Mock Swiss Meringue</option>
+                                    <option value="cream-cheese">Non-dairy whipped in Vanilla</option>
+                                    <option value="caramel">Strawberry</option>
+                                    <option value="lemon">Lemon</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Quantity</label>
+                                <select name="quantity" required>
+                                    <option value="" disabled selected>Select quantity</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Message</label>
+                                <textarea name="message" placeholder="Describe your theme, colors, or design. Specify if gluten-free (preference or allergy)."></textarea>
+                            </div>
+                            <button type="submit" class="btn-add-cart">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -178,93 +357,131 @@
                 <div class="item-card">
                     <img src="./assets/Cakes/cake2.png" class="item-card-img" alt="Basic Cakes">
                     <div class="item-card-body">
-                        <h3 class="item-card-name">Basic Cakes</h3>
-                        <p class="item-card-desc">Classic cakes in your favorite flavor, perfect for a simple and delicious celebration.</p>
-                        <p class="item-card-price">$19.99 per layer</p>
-                        <form class="order-form" data-product="Basic Cake" data-price="19.99" data-unit="layer">
-                            <div class="form-field">
-                                <label>Flavor</label>
-                                <select name="flavor" required>
-                                    <option value="" disabled selected>Select flavor</option>
-                                    <option value="vanilla">Vanilla</option>
-                                    <option value="chocolate">Chocolate</option>
-                                    <option value="strawberry">Strawberry</option>
-                                    <option value="mint">Mint</option>
-                                    <option value="caramel">Caramel</option>
-                                    <option value="mango">Mango</option>
-                                    <option value="blueberry">Blueberry</option>
-                                    <option value="lemon">Lemon</option>
-                                </select>
-                            </div>
-                            <div class="form-field">
-                                <label>Layers</label>
-                                <select name="quantity" required>
-                                    <option value="" disabled selected>Select layers</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </div>
-                            <div class="form-field">
-                                <label>Shape</label>
-                                <select name="shape">
-                                    <option value="" disabled selected>Select shape</option>
-                                    <option value="round">Round</option>
-                                    <option value="square">Square</option>
-                                    <option value="rectangle">Rectangle</option>
-                                    <option value="heart">Heart</option>
-                                </select>
-                            </div>
-                            <div class="form-field">
-                                <label>Message</label>
-                                <textarea name="message" placeholder="Please specify if gluten-free. Note whether preference or allergy."></textarea>
-                            </div>
-                            <button type="submit" class="btn-add-cart">Add to Cart</button>
-                        </form>
+                        <h3 class="item-card-name">Sheet Cakes</h3>
+                            <p class="item-card-desc">Classic cakes in your favorite flavor, perfect for a simple and delicious celebration.</p>
+                            <p class="item-card-price">Starting at $25.00</p>
+                            <form class="order-form" data-product="Basic Cake" data-unit="cake">
+                                <div class="form-field">
+                                    <label>Flavor</label>
+                                    <select name="flavor" required>
+                                        <option value="" disabled selected>Select flavor</option>
+                                        <option value="vanilla">White/Vanilla</option>
+                                        <option value="chocolate">Devils Food Chocolate</option>
+                                        <option value="strawberry">Strawberry</option>
+                                        <option value="mint">Lemon</option>
+                                        <option value="caramel">Confetti</option>
+                                        <option value="blueberry">Butter Cake</option>
+                                        <option value="lemon">Yellow</option>
+                                        <option value="strawberry">Marble White/Chocolate</option>
+                                        <option value="mint">Marble Chocolate Strawberry</option>
+                                        <option value="caramel">Red Velvet</option>
+                                        <option value="blueberry">Spice</option>
+                                        <option value="lemon">Carrot</option>
+                                        <option value="caramel">Raspberry Chip</option>
+                                        <option value="blueberry">Chocolate Chip</option>
+                                        <option value="lemon">Orange Cream</option>
+                                        <option value="lemon">Peanut Butter</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label>Size</label>
+                                    <select name="quantity" required class="tiered-price-select"
+                                        data-prices='{"7x11":"25.00","9x13":"35.00","11x15":"65.00","12x18":"95.00","full":"175.00"}'>
+                                        <option value="" disabled selected>Select size</option>
+                                        <option value="7x11">7" x 11" - $25.00</option>
+                                        <option value="9x13">9" x 13" - $35.00</option>
+                                        <option value="11x15">11" x 15" - $65.00</option>
+                                        <option value="12x18">12" x 18" - $95.00</option>
+                                        <option value="full">Full Sheet Cake - $175.00</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label>Filling (optional)</label>
+                                    <select name="filling" class="filling-select"
+                                        data-prices='{"none":"0","mousse-vanilla":"10.00","mousse-strawberry":"10.00","mousse-lemon":"10.00","mousse-chocolate":"10.00","fruit-raspberry":"20.00","fruit-lemon":"20.00","fruit-strawberry":"20.00"}'>
+                                        <option value="none" selected>No filling</option>
+                                        <optgroup label="Mousse (+$10.00)">
+                                            <option value="mousse-vanilla">Vanilla Mousse</option>
+                                            <option value="mousse-strawberry">Strawberry Mousse</option>
+                                            <option value="mousse-lemon">Lemon Mousse</option>
+                                            <option value="mousse-chocolate">Chocolate Mousse</option>
+                                        </optgroup>
+                                        <optgroup label="Fruit/Curd (+$20.00)">
+                                            <option value="fruit-raspberry">Raspberry</option>
+                                            <option value="fruit-lemon">Lemon Curd</option>
+                                            <option value="fruit-strawberry">Strawberry</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label>Message</label>
+                                    <textarea name="message" placeholder="Please specify if gluten-free. Note whether preference or allergy."></textarea>
+                                </div>
+                                <button type="submit" class="btn-add-cart">Add to Cart</button>
+                            </form>
                     </div>
                 </div>
                 <div class="item-card">
                     <img src="./assets/Cakes/cake4.jpg" class="item-card-img" alt="Occasion Cakes">
                     <div class="item-card-body">
-                        <h3 class="item-card-name">Occasion Cakes</h3>
+                        <h3 class="item-card-name">Round Cakes</h3>
                         <p class="item-card-desc">Custom cakes for any celebration, crafted with detail and love. From weddings to wild birthdays.</p>
-                        <p class="item-card-price">$29.99 per layer</p>
-                        <form class="order-form" data-product="Occasion Cakes" data-price="29.99" data-unit="layer">
+                        <p class="item-card-price">Starting at $40.00</p>
+                        <form class="order-form" data-product="Occasion Cake" data-unit="cake">
                             <div class="form-field">
                                 <label>Flavor</label>
                                 <select name="flavor" required>
                                     <option value="" disabled selected>Select flavor</option>
-                                    <option value="vanilla">Vanilla</option>
-                                    <option value="chocolate">Chocolate</option>
+                                    <option value="vanilla">White/Vanilla</option>
+                                    <option value="chocolate">Devils Food Chocolate</option>
                                     <option value="strawberry">Strawberry</option>
-                                    <option value="mint">Mint</option>
-                                    <option value="caramel">Caramel</option>
-                                    <option value="mango">Mango</option>
-                                    <option value="blueberry">Blueberry</option>
-                                    <option value="lemon">Lemon</option>
-                                </select>
-                            </div>
-                                                        <div class="form-field">
-                                <label>Layers</label>
-                                <select name="quantity" required>
-                                    <option value="" disabled selected>Select layers</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
+                                    <option value="mint">Lemon</option>
+                                    <option value="caramel">Confetti</option>
+                                    <option value="blueberry">Butter Cake</option>
+                                    <option value="lemon">Yellow</option>
+                                    <option value="strawberry">Marble White/Chocolate</option>
+                                    <option value="mint">Marble Chocolate Strawberry</option>
+                                    <option value="caramel">Red Velvet</option>
+                                    <option value="blueberry">Spice</option>
+                                    <option value="lemon">Carrot</option>
+                                    <option value="caramel">Raspberry Chip</option>
+                                    <option value="blueberry">Chocolate Chip</option>
+                                    <option value="lemon">Orange Cream</option>
+                                    <option value="lemon">Peanut Butter</option>
                                 </select>
                             </div>
                             <div class="form-field">
-                                <label>Shape</label>
-                                <select name="shape">
-                                    <option value="" disabled selected>Select shape</option>
-                                    <option value="round">Round</option>
-                                    <option value="square">Square</option>
-                                    <option value="rectangle">Rectangle</option>
-                                    <option value="heart">Heart</option>
+                                <label>Tiers</label>
+                                <select name="tiers" required class="tier-select">
+                                    <option value="" disabled selected>Select tiers</option>
+                                    <option value="2">2 Tier</option>
+                                    <option value="3">3 Tier</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Size</label>
+                                <select name="quantity" required class="tiered-price-select"
+                                    data-prices-2='{"4":"40.00","6":"65.00","8":"90.00","9":"115.00","10":"130.00","12":"150.00"}'
+                                    data-prices-3='{"4":"50.00","6":"75.00","8":"100.00","9":"125.00","10":"150.00"}'>
+                                    <option value="" disabled selected>Select a tier first</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Filling (optional)</label>
+                                <select name="filling" class="filling-select"
+                                    data-prices='{"none":"0","mousse-vanilla":"10.00","mousse-strawberry":"10.00","mousse-lemon":"10.00","mousse-chocolate":"10.00","fruit-raspberry":"20.00","fruit-lemon":"20.00","fruit-strawberry":"20.00"}'>
+                                    <option value="none" selected>No filling</option>
+                                    <optgroup label="Mousse (+$10.00)">
+                                        <option value="mousse-vanilla">Vanilla Mousse</option>
+                                        <option value="mousse-strawberry">Strawberry Mousse</option>
+                                        <option value="mousse-lemon">Lemon Mousse</option>
+                                        <option value="mousse-chocolate">Chocolate Mousse</option>
+                                    </optgroup>
+                                    <optgroup label="Fruit/Curd (+$20.00)">
+                                        <option value="fruit-raspberry">Raspberry</option>
+                                        <option value="fruit-lemon">Lemon Curd</option>
+                                        <option value="fruit-strawberry">Strawberry</option>
+                                    </optgroup>
                                 </select>
                             </div>
                             <div class="form-field">
@@ -273,6 +490,266 @@
                             </div>
                             <button type="submit" class="btn-add-cart">Add to Cart</button>
                         </form>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <img src="./assets/Cakes/cake2.png" class="item-card-img" alt="Basic Cakes">
+                    <div class="item-card-body">
+                        <h3 class="item-card-name">Birthday Cakes</h3>
+                            <p class="item-card-desc">Classic cakes in your favorite flavor, perfect for a simple and delicious celebration.</p>
+                            <p class="item-card-price">Starting at $150.00</p>
+                            <form class="order-form" data-product="Large Party Cake" data-unit="cake">
+                                <div class="form-field">
+                                    <label>Flavor</label>
+                                    <select name="flavor" required>
+                                        <option value="" disabled selected>Select flavor</option>
+                                        <option value="vanilla">White/Vanilla</option>
+                                        <option value="chocolate">Devils Food Chocolate</option>
+                                        <option value="strawberry">Strawberry</option>
+                                        <option value="lemon">Lemon</option>
+                                        <option value="confetti">Confetti</option>
+                                        <option value="butter">Butter Cake</option>
+                                        <option value="yellow">Yellow</option>
+                                        <option value="marble-white">Marble White/Chocolate</option>
+                                        <option value="marble-strawberry">Marble Chocolate Strawberry</option>
+                                        <option value="red-velvet">Red Velvet</option>
+                                        <option value="spice">Spice</option>
+                                        <option value="carrot">Carrot</option>
+                                        <option value="raspberry-chip">Raspberry Chip</option>
+                                        <option value="chocolate-chip">Chocolate Chip</option>
+                                        <option value="orange-cream">Orange Cream</option>
+                                        <option value="peanut-butter">Peanut Butter</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label>Size</label>
+                                    <select name="quantity" required class="tiered-price-select"
+                                        data-prices='{"2tier-small":"150.00","2tier-medium":"200.00","2tier-large":"250.00"}'>
+                                        <option value="" disabled selected>Select size</option>
+                                        <option value="2tier-small">2 Tier (6" + 8") - $150.00</option>
+                                        <option value="2tier-medium">2 Tier (8" + 10") - $200.00</option>
+                                        <option value="2tier-large">2 Tier (10" + 12") - $250.00</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label>Filling (optional)</label>
+                                    <select name="filling" class="filling-select"
+                                        data-prices='{"none":"0","mousse-vanilla":"10.00","mousse-strawberry":"10.00","mousse-lemon":"10.00","mousse-chocolate":"10.00","fruit-raspberry":"20.00","fruit-lemon":"20.00","fruit-strawberry":"20.00"}'>
+                                        <option value="none" selected>No filling</option>
+                                        <optgroup label="Mousse (+$10.00)">
+                                            <option value="mousse-vanilla">Vanilla Mousse</option>
+                                            <option value="mousse-strawberry">Strawberry Mousse</option>
+                                            <option value="mousse-lemon">Lemon Mousse</option>
+                                            <option value="mousse-chocolate">Chocolate Mousse</option>
+                                        </optgroup>
+                                        <optgroup label="Fruit/Curd (+$20.00)">
+                                            <option value="fruit-raspberry">Raspberry</option>
+                                            <option value="fruit-lemon">Lemon Curd</option>
+                                            <option value="fruit-strawberry">Strawberry</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label>Message</label>
+                                    <textarea name="message" placeholder="Please specify if gluten-free. Note whether preference or allergy."></textarea>
+                                </div>
+                                <button type="submit" class="btn-add-cart">Add to Cart</button>
+                            </form>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <img src="./assets/Cakes/cake2.png" class="item-card-img" alt="Basic Cakes">
+                    <div class="item-card-body">
+                        <h3 class="item-card-name">2 Tier Wedding Cakes</h3>
+                            <p class="item-card-desc">Classic cakes in your favorite flavor, perfect for a simple and delicious celebration.</p>
+                            <p class="item-card-price">Starting at $200.00</p>
+                            <form class="order-form" data-product="2 Tier Wedding Cake" data-unit="cake">
+                                <div class="form-field">
+                                    <label>Flavor</label>
+                                    <select name="flavor" required>
+                                        <option value="" disabled selected>Select flavor</option>
+                                        <option value="vanilla">White/Vanilla</option>
+                                        <option value="chocolate">Devils Food Chocolate</option>
+                                        <option value="strawberry">Strawberry</option>
+                                        <option value="lemon">Lemon</option>
+                                        <option value="confetti">Confetti</option>
+                                        <option value="butter">Butter Cake</option>
+                                        <option value="yellow">Yellow</option>
+                                        <option value="marble-white">Marble White/Chocolate</option>
+                                        <option value="marble-strawberry">Marble Chocolate Strawberry</option>
+                                        <option value="red-velvet">Red Velvet</option>
+                                        <option value="spice">Spice</option>
+                                        <option value="carrot">Carrot</option>
+                                        <option value="raspberry-chip">Raspberry Chip</option>
+                                        <option value="chocolate-chip">Chocolate Chip</option>
+                                        <option value="orange-cream">Orange Cream</option>
+                                        <option value="peanut-butter">Peanut Butter</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label>Size</label>
+                                    <select name="quantity" required class="tiered-price-select"
+                                        data-prices='{"2tier-sm":"200.00","2tier-md":"250.00","2tier-lg":"300.00"}'>
+                                        <option value="" disabled selected>Select size</option>
+                                        <option value="2tier-sm">2 Tier (6" + 8") - $200.00</option>
+                                        <option value="2tier-md">2 Tier (8" + 10") - $250.00</option>
+                                        <option value="2tier-lg">2 Tier (10" + 12") - $300.00</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label>Filling (optional)</label>
+                                    <select name="filling" class="filling-select"
+                                        data-prices='{"none":"0","mousse-vanilla":"10.00","mousse-strawberry":"10.00","mousse-lemon":"10.00","mousse-chocolate":"10.00","fruit-raspberry":"20.00","fruit-lemon":"20.00","fruit-strawberry":"20.00"}'>
+                                        <option value="none" selected>No filling</option>
+                                        <optgroup label="Mousse (+$10.00)">
+                                            <option value="mousse-vanilla">Vanilla Mousse</option>
+                                            <option value="mousse-strawberry">Strawberry Mousse</option>
+                                            <option value="mousse-lemon">Lemon Mousse</option>
+                                            <option value="mousse-chocolate">Chocolate Mousse</option>
+                                        </optgroup>
+                                        <optgroup label="Fruit/Curd (+$20.00)">
+                                            <option value="fruit-raspberry">Raspberry</option>
+                                            <option value="fruit-lemon">Lemon Curd</option>
+                                            <option value="fruit-strawberry">Strawberry</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label>Message</label>
+                                    <textarea name="message" placeholder="Please specify if gluten-free. Note whether preference or allergy."></textarea>
+                                </div>
+                                <button type="submit" class="btn-add-cart">Add to Cart</button>
+                            </form>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <img src="./assets/Cakes/cake2.png" class="item-card-img" alt="Basic Cakes">
+                    <div class="item-card-body">
+                        <h3 class="item-card-name">3 Tier Wedding Cakes</h3>
+                            <p class="item-card-desc">Classic cakes in your favorite flavor, perfect for a simple and delicious celebration.</p>
+                            <p class="item-card-price">Starting at $300.00</p>
+                            <form class="order-form" data-product="3 Tier Wedding Cake" data-unit="cake">
+                                <div class="form-field">
+                                    <label>Flavor</label>
+                                    <select name="flavor" required>
+                                        <option value="" disabled selected>Select flavor</option>
+                                        <option value="vanilla">White/Vanilla</option>
+                                        <option value="chocolate">Devils Food Chocolate</option>
+                                        <option value="strawberry">Strawberry</option>
+                                        <option value="lemon">Lemon</option>
+                                        <option value="confetti">Confetti</option>
+                                        <option value="butter">Butter Cake</option>
+                                        <option value="yellow">Yellow</option>
+                                        <option value="marble-white">Marble White/Chocolate</option>
+                                        <option value="marble-strawberry">Marble Chocolate Strawberry</option>
+                                        <option value="red-velvet">Red Velvet</option>
+                                        <option value="spice">Spice</option>
+                                        <option value="carrot">Carrot</option>
+                                        <option value="raspberry-chip">Raspberry Chip</option>
+                                        <option value="chocolate-chip">Chocolate Chip</option>
+                                        <option value="orange-cream">Orange Cream</option>
+                                        <option value="peanut-butter">Peanut Butter</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label>Size</label>
+                                    <select name="quantity" required class="tiered-price-select"
+                                        data-prices='{"3tier-sm":"300.00","3tier-md":"375.00","3tier-lg":"450.00"}'>
+                                        <option value="" disabled selected>Select size</option>
+                                        <option value="3tier-sm">3 Tier (6" + 8" + 10") - $300.00</option>
+                                        <option value="3tier-md">3 Tier (8" + 10" + 12") - $375.00</option>
+                                        <option value="3tier-lg">3 Tier (10" + 12" + 14") - $450.00</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label>Filling (optional)</label>
+                                    <select name="filling" class="filling-select"
+                                        data-prices='{"none":"0","mousse-vanilla":"10.00","mousse-strawberry":"10.00","mousse-lemon":"10.00","mousse-chocolate":"10.00","fruit-raspberry":"20.00","fruit-lemon":"20.00","fruit-strawberry":"20.00"}'>
+                                        <option value="none" selected>No filling</option>
+                                        <optgroup label="Mousse (+$10.00)">
+                                            <option value="mousse-vanilla">Vanilla Mousse</option>
+                                            <option value="mousse-strawberry">Strawberry Mousse</option>
+                                            <option value="mousse-lemon">Lemon Mousse</option>
+                                            <option value="mousse-chocolate">Chocolate Mousse</option>
+                                        </optgroup>
+                                        <optgroup label="Fruit/Curd (+$20.00)">
+                                            <option value="fruit-raspberry">Raspberry</option>
+                                            <option value="fruit-lemon">Lemon Curd</option>
+                                            <option value="fruit-strawberry">Strawberry</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label>Message</label>
+                                    <textarea name="message" placeholder="Please specify if gluten-free. Note whether preference or allergy."></textarea>
+                                </div>
+                                <button type="submit" class="btn-add-cart">Add to Cart</button>
+                            </form>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <img src="./assets/Cakes/cake2.png" class="item-card-img" alt="Basic Cakes">
+                    <div class="item-card-body">
+                        <h3 class="item-card-name">4 Tier Wedding Cakes</h3>
+                            <p class="item-card-desc">Classic cakes in your favorite flavor, perfect for a simple and delicious celebration.</p>
+                            <p class="item-card-price">Starting at $400.00</p>
+                            <form class="order-form" data-product="4 Tier Wedding Cake" data-unit="cake">
+                                <div class="form-field">
+                                    <label>Flavor</label>
+                                    <select name="flavor" required>
+                                        <option value="" disabled selected>Select flavor</option>
+                                        <option value="vanilla">White/Vanilla</option>
+                                        <option value="chocolate">Devils Food Chocolate</option>
+                                        <option value="strawberry">Strawberry</option>
+                                        <option value="lemon">Lemon</option>
+                                        <option value="confetti">Confetti</option>
+                                        <option value="butter">Butter Cake</option>
+                                        <option value="yellow">Yellow</option>
+                                        <option value="marble-white">Marble White/Chocolate</option>
+                                        <option value="marble-strawberry">Marble Chocolate Strawberry</option>
+                                        <option value="red-velvet">Red Velvet</option>
+                                        <option value="spice">Spice</option>
+                                        <option value="carrot">Carrot</option>
+                                        <option value="raspberry-chip">Raspberry Chip</option>
+                                        <option value="chocolate-chip">Chocolate Chip</option>
+                                        <option value="orange-cream">Orange Cream</option>
+                                        <option value="peanut-butter">Peanut Butter</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label>Size</label>
+                                    <select name="quantity" required class="tiered-price-select"
+                                        data-prices='{"4tier-sm":"400.00","4tier-md":"500.00","4tier-lg":"600.00"}'>
+                                        <option value="" disabled selected>Select size</option>
+                                        <option value="4tier-sm">4 Tier (6" + 8" + 10" + 12") - $400.00</option>
+                                        <option value="4tier-md">4 Tier (8" + 10" + 12" + 14") - $500.00</option>
+                                        <option value="4tier-lg">4 Tier (10" + 12" + 14" + 16") - $600.00</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label>Filling (optional)</label>
+                                    <select name="filling" class="filling-select"
+                                        data-prices='{"none":"0","mousse-vanilla":"10.00","mousse-strawberry":"10.00","mousse-lemon":"10.00","mousse-chocolate":"10.00","fruit-raspberry":"20.00","fruit-lemon":"20.00","fruit-strawberry":"20.00"}'>
+                                        <option value="none" selected>No filling</option>
+                                        <optgroup label="Mousse (+$10.00)">
+                                            <option value="mousse-vanilla">Vanilla Mousse</option>
+                                            <option value="mousse-strawberry">Strawberry Mousse</option>
+                                            <option value="mousse-lemon">Lemon Mousse</option>
+                                            <option value="mousse-chocolate">Chocolate Mousse</option>
+                                        </optgroup>
+                                        <optgroup label="Fruit/Curd (+$20.00)">
+                                            <option value="fruit-raspberry">Raspberry</option>
+                                            <option value="fruit-lemon">Lemon Curd</option>
+                                            <option value="fruit-strawberry">Strawberry</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label>Message</label>
+                                    <textarea name="message" placeholder="Please specify if gluten-free. Note whether preference or allergy."></textarea>
+                                </div>
+                                <button type="submit" class="btn-add-cart">Add to Cart</button>
+                            </form>
                     </div>
                 </div>
             </div>
@@ -288,10 +765,10 @@
                 <div class="item-card">
                     <img src="./assets/Cakepops/cakepop6.png" class="item-card-img" alt="Basic Cake Pops">
                     <div class="item-card-body">
-                        <h3 class="item-card-name">Basic Cake Pops</h3>
+                        <h3 class="item-card-name">Standard Cake Pops</h3>
                         <p class="item-card-desc">Bite-sized cake on a stick, dipped and ready to enjoy. A fun treat for any gathering.</p>
-                        <p class="item-card-price">$24.99 a dozen</p>
-                        <form class="order-form" data-product="Basic Cake Pops" data-price="24.99" data-unit="dozen">
+                        <p class="item-card-price">$25.00 a dozen</p>
+                        <form class="order-form" data-product="Cake Pops" data-unit="dozen">
                             <div class="form-field">
                                 <label>Flavor</label>
                                 <select name="flavor" required>
@@ -307,17 +784,14 @@
                             </div>
                             <div class="form-field">
                                 <label>Quantity</label>
-                                <select name="quantity" required>
+                                <select name="quantity" required class="tiered-price-select"
+                                    data-prices='{"12":"25.00","24":"50.00"}'>
                                     <option value="" disabled selected>Select quantity</option>
-                                    <option value="12">12</option>
-                                    <option value="24">24</option>
-                                    <option value="36">36</option>
-                                    <option value="48">48</option>
-                                    <option value="60">60</option>
-                                    <option value="72">72</option>
-                                    <option value="100">100</option>
+                                    <option value="12">12 Cake Pops - $25.00</option>
+                                    <option value="24">24 Cake Pops - $50.00</option>
                                 </select>
                             </div>
+                            <p class="form-note">Standard designs only.</p>
                             <div class="form-field">
                                 <label>Message</label>
                                 <textarea name="message" placeholder="Please specify if gluten-free. Note whether preference or allergy."></textarea>
@@ -329,10 +803,47 @@
                 <div class="item-card">
                     <img src="./assets/Cakepops/cakepop9.png" class="item-card-img" alt="Occasion Cake Pops">
                     <div class="item-card-body">
+                        <h3 class="item-card-name">Cakesicle Cake Pops</h3>
+                        <p class="item-card-desc">Custom-decorated cake pops designed to match your event's theme, colors, and style.</p>
+                        <form class="order-form" data-product="Cakesicles" data-unit="dozen">
+                        <div class="form-field">
+                            <label>Flavor</label>
+                            <select name="flavor" required>
+                                <option value="" disabled selected>Select flavor</option>
+                                <option value="vanilla">Vanilla</option>
+                                <option value="chocolate">Chocolate</option>
+                                <option value="strawberry">Strawberry</option>
+                                <option value="mint">Mint</option>
+                                <option value="caramel">Caramel</option>
+                                <option value="blueberry">Blueberry</option>
+                                <option value="lemon">Lemon</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <label>Quantity</label>
+                            <select name="quantity" required class="tiered-price-select"
+                                data-prices='{"12":"35.00","24":"65.00"}'>
+                                <option value="" disabled selected>Select quantity</option>
+                                <option value="12">12 Cakesicles - $35.00</option>
+                                <option value="24">24 Cakesicles - $65.00</option>
+                            </select>
+                        </div>
+                        <p class="form-note">Standard designs only.</p>
+                            <div class="form-field">
+                                <label>Message</label>
+                                <textarea name="message" placeholder="Describe your theme, colors, or design. Specify if gluten-free (preference or allergy)."></textarea>
+                            </div>
+                            <button type="submit" class="btn-add-cart">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <img src="./assets/Cakepops/cakepop9.png" class="item-card-img" alt="Occasion Cake Pops">
+                    <div class="item-card-body">
                         <h3 class="item-card-name">Occasion Cake Pops</h3>
                         <p class="item-card-desc">Custom-decorated cake pops designed to match your event's theme, colors, and style.</p>
-                        <p class="item-card-price">$34.99 a dozen</p>
-                        <form class="order-form" data-product="Occasion Cake Pops" data-price="34.99" data-unit="dozen">
+                        <p class="item-card-price">$35.00 a dozen</p>
+                        <form class="order-form" data-product="Cake Pucks" data-unit="dozen">
                             <div class="form-field">
                                 <label>Flavor</label>
                                 <select name="flavor" required>
@@ -348,17 +859,14 @@
                             </div>
                             <div class="form-field">
                                 <label>Quantity</label>
-                                <select name="quantity" required>
+                                <select name="quantity" required class="tiered-price-select"
+                                    data-prices='{"12":"35.00","24":"65.00"}'>
                                     <option value="" disabled selected>Select quantity</option>
-                                    <option value="12">12</option>
-                                    <option value="24">24</option>
-                                    <option value="36">36</option>
-                                    <option value="48">48</option>
-                                    <option value="60">60</option>
-                                    <option value="72">72</option>
-                                    <option value="100">100</option>
+                                    <option value="12">12 Cake Pucks - $35.00</option>
+                                    <option value="24">24 Cake Pucks - $65.00</option>
                                 </select>
                             </div>
+                            <p class="form-note">Standard designs only.</p>
                             <div class="form-field">
                                 <label>Message</label>
                                 <textarea name="message" placeholder="Describe your theme, colors, or design. Specify if gluten-free (preference or allergy)."></textarea>
@@ -380,36 +888,61 @@
                 <div class="item-card">
                     <img src="./assets/Cupcakes/cupcake.png" class="item-card-img" alt="Basic Cupcakes">
                     <div class="item-card-body">
-                        <h3 class="item-card-name">Basic Cupcakes</h3>
+                        <h3 class="item-card-name">Regular Cupcakes</h3>
                         <p class="item-card-desc">Fluffy cupcakes topped with creamy frosting. A classic favorite in your choice of flavor.</p>
-                        <p class="item-card-price">$18.99 a dozen</p>
-                        <form class="order-form" data-product="Basic Cupcakes" data-price="18.99" data-unit="dozen">
+                        <p class="item-card-price">Starting at $15.00</p>
+                        <form class="order-form" data-product="Basic Cupcakes" data-unit="pack">
                             <div class="form-field">
                                 <label>Flavor</label>
                                 <select name="flavor" required>
                                     <option value="" disabled selected>Select flavor</option>
-                                    <option value="vanilla">Vanilla</option>
-                                    <option value="chocolate">Chocolate</option>
+                                    <option value="vanilla">White/Vanilla</option>
+                                    <option value="chocolate">Devils Food Chocolate</option>
                                     <option value="strawberry">Strawberry</option>
-                                    <option value="mint">Mint</option>
-                                    <option value="caramel">Caramel</option>
-                                    <option value="blueberry">Blueberry</option>
-                                    <option value="lemon">Lemon</option>
+                                    <option value="mint">Lemon</option>
+                                    <option value="caramel">Confetti</option>
+                                    <option value="blueberry">Butter Cake</option>
+                                    <option value="lemon">Yellow</option>
+                                    <option value="strawberry">Marble White/Chocolate</option>
+                                    <option value="mint">Marble Chocolate Strawberry</option>
+                                    <option value="caramel">Red Velvet</option>
+                                    <option value="blueberry">Spice</option>
+                                    <option value="lemon">Carrot</option>
+                                    <option value="caramel">Raspberry Chip</option>
+                                    <option value="blueberry">Chocolate Chip</option>
+                                    <option value="lemon">Orange Cream</option>
+                                    <option value="lemon">Peanut Butter</option>
                                 </select>
                             </div>
                             <div class="form-field">
                                 <label>Quantity</label>
-                                <select name="quantity" required>
+                                <select name="quantity" required class="tiered-price-select"
+                                    data-prices='{"6":"15.00","12":"30.00","24":"40.00","48":"60.00"}'>
                                     <option value="" disabled selected>Select quantity</option>
-                                    <option value="12">12</option>
-                                    <option value="24">24</option>
-                                    <option value="36">36</option>
-                                    <option value="48">48</option>
-                                    <option value="60">60</option>
-                                    <option value="72">72</option>
-                                    <option value="100">100</option>
+                                    <option value="6">6 pack - $15.00</option>
+                                    <option value="12">12 pack - $30.00</option>
+                                    <option value="24">24 pack - $40.00</option>
+                                    <option value="48">48 pack - $60.00</option>
                                 </select>
                             </div>
+                             <div class="form-field">
+                                    <label>Filling (optional)</label>
+                                    <select name="filling" class="filling-select"
+                                        data-prices='{"none":"0","mousse-vanilla":"10.00","mousse-strawberry":"10.00","mousse-lemon":"10.00","mousse-chocolate":"10.00","fruit-raspberry":"20.00","fruit-lemon":"20.00","fruit-strawberry":"20.00"}'>
+                                        <option value="none" selected>No filling</option>
+                                        <optgroup label="Mousse (+$10.00)">
+                                            <option value="mousse-vanilla">Vanilla Mousse</option>
+                                            <option value="mousse-strawberry">Strawberry Mousse</option>
+                                            <option value="mousse-lemon">Lemon Mousse</option>
+                                            <option value="mousse-chocolate">Chocolate Mousse</option>
+                                        </optgroup>
+                                        <optgroup label="Fruit/Curd (+$20.00)">
+                                            <option value="fruit-raspberry">Raspberry</option>
+                                            <option value="fruit-lemon">Lemon Curd</option>
+                                            <option value="fruit-strawberry">Strawberry</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
                             <div class="form-field">
                                 <label>Message</label>
                                 <textarea name="message" placeholder="Please specify if gluten-free. Note whether preference or allergy."></textarea>
@@ -421,39 +954,130 @@
                 <div class="item-card">
                     <img src="./assets/Cupcakes/cupcake3.jpg" class="item-card-img" alt="Occasion Cupcakes">
                     <div class="item-card-body">
-                        <h3 class="item-card-name">Occasion Cupcakes</h3>
+                        <h3 class="item-card-name">Signature Cupcakes</h3>
                         <p class="item-card-desc">Custom-decorated cupcakes designed for your special event. Elegant, fun, and unforgettable.</p>
-                        <p class="item-card-price">$27.99 a dozen</p>
-                        <form class="order-form" data-product="Occasion Cupcakes" data-price="27.99" data-unit="dozen">
+                        <p class="item-card-price">Starting at $30.00</p>
+                        <form class="order-form" data-product="Basic Cupcakes" data-unit="pack">
                             <div class="form-field">
                                 <label>Flavor</label>
                                 <select name="flavor" required>
                                     <option value="" disabled selected>Select flavor</option>
-                                    <option value="vanilla">Vanilla</option>
-                                    <option value="chocolate">Chocolate</option>
+                                    <option value="vanilla">White/Vanilla</option>
+                                    <option value="chocolate">Devils Food Chocolate</option>
                                     <option value="strawberry">Strawberry</option>
-                                    <option value="mint">Mint</option>
-                                    <option value="caramel">Caramel</option>
-                                    <option value="blueberry">Blueberry</option>
-                                    <option value="lemon">Lemon</option>
+                                    <option value="mint">Lemon</option>
+                                    <option value="caramel">Confetti</option>
+                                    <option value="blueberry">Butter Cake</option>
+                                    <option value="lemon">Yellow</option>
+                                    <option value="strawberry">Marble White/Chocolate</option>
+                                    <option value="mint">Marble Chocolate Strawberry</option>
+                                    <option value="caramel">Red Velvet</option>
+                                    <option value="blueberry">Spice</option>
+                                    <option value="lemon">Carrot</option>
+                                    <option value="caramel">Raspberry Chip</option>
+                                    <option value="blueberry">Chocolate Chip</option>
+                                    <option value="lemon">Orange Cream</option>
+                                    <option value="lemon">Peanut Butter</option>
                                 </select>
                             </div>
                             <div class="form-field">
                                 <label>Quantity</label>
-                                <select name="quantity" required>
+                                <select name="quantity" required class="tiered-price-select"
+                                    data-prices='{"6":"30.00","12":"40.00","24":"60.00","48":"80.00"}'>
                                     <option value="" disabled selected>Select quantity</option>
-                                    <option value="12">12</option>
-                                    <option value="24">24</option>
-                                    <option value="36">36</option>
-                                    <option value="48">48</option>
-                                    <option value="60">60</option>
-                                    <option value="72">72</option>
-                                    <option value="100">100</option>
+                                    <option value="6">6 pack - $30.00</option>
+                                    <option value="12">12 pack - $40.00</option>
+                                    <option value="24">24 pack - $60.00</option>
+                                    <option value="48">48 pack - $80.00</option>
                                 </select>
                             </div>
+                             <div class="form-field">
+                            <label>Filling (optional)</label>
+                            <select name="filling" class="filling-select"
+                                data-prices-by-qty='{"6":{"mousse":"5.00","fruit":"7.50"},"12":{"mousse":"10.00","fruit":"10.00"},"24":{"mousse":"15.00","fruit":"15.00"},"48":{"mousse":"20.00","fruit":"20.00"}}'>
+                                <option value="none" selected>No filling</option>
+                                <optgroup label="Mousse Filled">
+                                    <option value="mousse-vanilla">Vanilla Mousse</option>
+                                    <option value="mousse-strawberry">Strawberry Mousse</option>
+                                    <option value="mousse-lemon">Lemon Mousse</option>
+                                    <option value="mousse-chocolate">Chocolate Mousse</option>
+                                </optgroup>
+                                <optgroup label="Fruit/Curd Filled">
+                                    <option value="fruit-raspberry">Raspberry</option>
+                                    <option value="fruit-lemon">Lemon Curd</option>
+                                    <option value="fruit-strawberry">Strawberry</option>
+                                </optgroup>
+                            </select>
+                        </div>
                             <div class="form-field">
                                 <label>Message</label>
                                 <textarea name="message" placeholder="Describe your theme, colors, or design. Specify if gluten-free (preference or allergy)."></textarea>
+                            </div>
+                            <button type="submit" class="btn-add-cart">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <img src="./assets/Cupcakes/cupcake.png" class="item-card-img" alt="Basic Cupcakes">
+                    <div class="item-card-body">
+                        <h3 class="item-card-name">Custom Cupcakes</h3>
+                        <p class="item-card-desc">Fluffy cupcakes topped with creamy frosting. A classic favorite in your choice of flavor.</p>
+                        <p class="item-card-price">Starting at $40.00</p>
+                        <form class="order-form" data-product="Basic Cupcakes" data-unit="pack">
+                            <div class="form-field">
+                                <label>Flavor</label>
+                                <select name="flavor" required>
+                                    <option value="" disabled selected>Select flavor</option>
+                                    <option value="vanilla">White/Vanilla</option>
+                                    <option value="chocolate">Devils Food Chocolate</option>
+                                    <option value="strawberry">Strawberry</option>
+                                    <option value="mint">Lemon</option>
+                                    <option value="caramel">Confetti</option>
+                                    <option value="blueberry">Butter Cake</option>
+                                    <option value="lemon">Yellow</option>
+                                    <option value="strawberry">Marble White/Chocolate</option>
+                                    <option value="mint">Marble Chocolate Strawberry</option>
+                                    <option value="caramel">Red Velvet</option>
+                                    <option value="blueberry">Spice</option>
+                                    <option value="lemon">Carrot</option>
+                                    <option value="caramel">Raspberry Chip</option>
+                                    <option value="blueberry">Chocolate Chip</option>
+                                    <option value="lemon">Orange Cream</option>
+                                    <option value="lemon">Peanut Butter</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Quantity</label>
+                                <select name="quantity" required class="tiered-price-select"
+                                    data-prices='{"6":"40.00","12":"60.00","24":"80.00","48":"100.00"}'>
+                                    <option value="" disabled selected>Select quantity</option>
+                                    <option value="6">6 pack - $40.00</option>
+                                    <option value="12">12 pack - $60.00</option>
+                                    <option value="24">24 pack - $80.00</option>
+                                    <option value="48">48 pack - $100.00</option>
+                                </select>
+                            </div>
+                             <div class="form-field">
+                                    <label>Filling (optional)</label>
+                                    <select name="filling" class="filling-select"
+                                        data-prices='{"none":"0","mousse-vanilla":"10.00","mousse-strawberry":"10.00","mousse-lemon":"10.00","mousse-chocolate":"10.00","fruit-raspberry":"20.00","fruit-lemon":"20.00","fruit-strawberry":"20.00"}'>
+                                        <option value="none" selected>No filling</option>
+                                        <optgroup label="Mousse (+$10.00)">
+                                            <option value="mousse-vanilla">Vanilla Mousse</option>
+                                            <option value="mousse-strawberry">Strawberry Mousse</option>
+                                            <option value="mousse-lemon">Lemon Mousse</option>
+                                            <option value="mousse-chocolate">Chocolate Mousse</option>
+                                        </optgroup>
+                                        <optgroup label="Fruit/Curd (+$20.00)">
+                                            <option value="fruit-raspberry">Raspberry</option>
+                                            <option value="fruit-lemon">Lemon Curd</option>
+                                            <option value="fruit-strawberry">Strawberry</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                            <div class="form-field">
+                                <label>Message</label>
+                                <textarea name="message" placeholder="Please specify if gluten-free. Note whether preference or allergy."></textarea>
                             </div>
                             <button type="submit" class="btn-add-cart">Add to Cart</button>
                         </form>
