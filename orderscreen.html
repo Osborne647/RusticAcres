@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order | Rustic Acres Baked Creations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="order.css">
+    <script src="https://kit.fontawesome.com/662da0114d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">
+            <img src="./Logo/logo 4.png" class="nav-logo-img" alt="Rustic Acres logo">
+            <div class="nav-brand">
+                <span class="nav-brand-name">RUSTIC ACRES</span>
+                <span class="nav-brand-sub">Baked Creations</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav__link--anchor link__hover-effect link__hover-effect--black">Home</a></li>
+            <li><a href="gallery.html" class="nav__link--anchor link__hover-effect link__hover-effect--black">Gallery</a></li>
+            <li class="nav__link">
+    <a href="javascript:void(0)" onclick="toggleContact()" class="nav__link--anchor link__hover-effect link__hover-effect--black">Contact</a>
+</li>
+        </ul>
+        <a href="cart.html" class="nav-cart">
+            🛒 <span class="cart-badge" id="cart-badge">0</span>
+        </a>
+        <button class="nav-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- HEADER -->
+    <section class="order-hero">
+        <h1>Place Your Order</h1>
+        <p>Homemade baked goods for every occasion, crafted from scratch with love.</p>
+    </section>
+
+    <!-- CATEGORY NAV -->
+    <div class="category-nav">
+        <div class="category-nav-inner">
+            <a href="#cookies">Cookies</a>
+            <a href="#cakes">Cakes</a>
+            <a href="#cakepops">Cake Pops</a>
+            <a href="#cupcakes">Cupcakes</a>
+        </div>
+    </div>
+
+    <!-- COOKIES -->
+    <section class="order-section" id="cookies">
+        <div class="order-section-inner">
+            <h2 class="order-section-title">Cookies</h2>
+            <div class="order-section-divider"></div>
+            <div class="items-grid">
+                <div class="item-card">
+                    <img src="./assets/Cookies/cookie4.png" class="item-card-img" alt="Basic Cookies">
+                    <div class="item-card-body">
+                        <h3 class="item-card-name">Basic Cookies</h3>
+                        <p class="item-card-desc">Simple, delicious cookies in your choice of flavor and shape. A sweet treat for any day.</p>
+                        <p class="item-card-price">$14.99 a dozen</p>
+                        <form class="order-form" data-product="Basic Cookies" data-price="14.99" data-unit="dozen">
+                            <div class="form-field">
+                                <label>Flavor</label>
+                                <select name="flavor" required>
+                                    <option value="" disabled selected>Select flavor</option>
+                                    <option value="vanilla">Vanilla</option>
+                                    <option value="chocolate">Chocolate</option>
+                                    <option value="strawberry">Strawberry</option>
+                                    <option value="mint">Mint</option>
+                                    <option value="caramel">Caramel</option>
+                                    <option value="blueberry">Blueberry</option>
+                                    <option value="lemon">Lemon</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Quantity</label>
+                                <select name="quantity" required>
+                                    <option value="" disabled selected>Select quantity</option>
+                                    <option value="12">12</option>
+                                    <option value="24">24</option>
+                                    <option value="36">36</option>
+                                    <option value="48">48</option>
+                                    <option value="60">60</option>
+                                    <option value="72">72</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Shape</label>
+                                <select name="shape" required>
+                                    <option value="" disabled selected>Select shape</option>
+                                    <option value="round">Round</option>
+                                    <option value="square">Square</option>
+                                    <option value="rectangle">Rectangle</option>
+                                    <option value="heart">Heart</option>
+                                    <option value="star">Star</option>
+                                    <option value="oval">Oval</option>
+                                    <option value="triangle">Triangle</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Message</label>
+                                <textarea name="message" placeholder="Please specify if gluten-free. Note whether preference or allergy."></textarea>
+                            </div>
+                            <button type="submit" class="btn-add-cart">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <img src="./assets/Cookies/cookie5.jpg" class="item-card-img" alt="Occasion Cookies">
+                    <div class="item-card-body">
+                        <h3 class="item-card-name">Occasion Cookies</h3>
+                        <p class="item-card-desc">Hand-decorated royal icing cookies designed for your celebration, from birthdays to weddings.</p>
+                        <p class="item-card-price">$19.99 a dozen</p>
+                        <form class="order-form" data-product="Occasion Cookies" data-price="19.99" data-unit="dozen">
+                            <div class="form-field">
+                                <label>Flavor</label>
+                                <select name="flavor" required>
+                                    <option value="" disabled selected>Select flavor</option>
+                                    <option value="vanilla">Vanilla</option>
+                                    <option value="chocolate">Chocolate</option>
+                                    <option value="strawberry">Strawberry</option>
+                                    <option value="mint">Mint</option>
+                                    <option value="caramel">Caramel</option>
+                                    <option value="blueberry">Blueberry</option>
+                                    <option value="lemon">Lemon</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Quantity</label>
+                                <select name="quantity" required>
+                                    <option value="" disabled selected>Select quantity</option>
+                                    <option value="12">12</option>
+                                    <option value="24">24</option>
+                                    <option value="36">36</option>
+                                    <option value="48">48</option>
+                                    <option value="60">60</option>
+                                    <option value="72">72</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Shape</label>
+                                <select name="shape" required>
+                                    <option value="" disabled selected>Select shape</option>
+                                    <option value="round">Round</option>
+                                    <option value="square">Square</option>
+                                    <option value="rectangle">Rectangle</option>
+                                    <option value="heart">Heart</option>
+                                    <option value="star">Star</option>
+                                    <option value="oval">Oval</option>
+                                    <option value="hexagon">Hexagon</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Message</label>
+                                <textarea name="message" placeholder="Describe your theme, colors, or design. Specify if gluten-free (preference or allergy)."></textarea>
+                            </div>
+                            <button type="submit" class="btn-add-cart">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAKES -->
+    <section class="order-section" id="cakes">
+        <div class="order-section-inner">
+            <h2 class="order-section-title">Cakes</h2>
+            <div class="order-section-divider"></div>
+            <div class="items-grid">
+                <div class="item-card">
+                    <img src="./assets/Cakes/cake2.png" class="item-card-img" alt="Basic Cakes">
+                    <div class="item-card-body">
+                        <h3 class="item-card-name">Basic Cakes</h3>
+                        <p class="item-card-desc">Classic cakes in your favorite flavor, perfect for a simple and delicious celebration.</p>
+                        <p class="item-card-price">$19.99 per layer</p>
+                        <form class="order-form" data-product="Basic Cake" data-price="19.99" data-unit="layer">
+                            <div class="form-field">
+                                <label>Flavor</label>
+                                <select name="flavor" required>
+                                    <option value="" disabled selected>Select flavor</option>
+                                    <option value="vanilla">Vanilla</option>
+                                    <option value="chocolate">Chocolate</option>
+                                    <option value="strawberry">Strawberry</option>
+                                    <option value="mint">Mint</option>
+                                    <option value="caramel">Caramel</option>
+                                    <option value="mango">Mango</option>
+                                    <option value="blueberry">Blueberry</option>
+                                    <option value="lemon">Lemon</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Layers</label>
+                                <select name="quantity" required>
+                                    <option value="" disabled selected>Select layers</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Shape</label>
+                                <select name="shape">
+                                    <option value="" disabled selected>Select shape</option>
+                                    <option value="round">Round</option>
+                                    <option value="square">Square</option>
+                                    <option value="rectangle">Rectangle</option>
+                                    <option value="heart">Heart</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Message</label>
+                                <textarea name="message" placeholder="Please specify if gluten-free. Note whether preference or allergy."></textarea>
+                            </div>
+                            <button type="submit" class="btn-add-cart">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <img src="./assets/Cakes/cake4.jpg" class="item-card-img" alt="Occasion Cakes">
+                    <div class="item-card-body">
+                        <h3 class="item-card-name">Occasion Cakes</h3>
+                        <p class="item-card-desc">Custom cakes for any celebration, crafted with detail and love. From weddings to wild birthdays.</p>
+                        <p class="item-card-price">$29.99 per layer</p>
+                        <form class="order-form" data-product="Occasion Cakes" data-price="29.99" data-unit="layer">
+                            <div class="form-field">
+                                <label>Flavor</label>
+                                <select name="flavor" required>
+                                    <option value="" disabled selected>Select flavor</option>
+                                    <option value="vanilla">Vanilla</option>
+                                    <option value="chocolate">Chocolate</option>
+                                    <option value="strawberry">Strawberry</option>
+                                    <option value="mint">Mint</option>
+                                    <option value="caramel">Caramel</option>
+                                    <option value="mango">Mango</option>
+                                    <option value="blueberry">Blueberry</option>
+                                    <option value="lemon">Lemon</option>
+                                </select>
+                            </div>
+                                                        <div class="form-field">
+                                <label>Layers</label>
+                                <select name="quantity" required>
+                                    <option value="" disabled selected>Select layers</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Shape</label>
+                                <select name="shape">
+                                    <option value="" disabled selected>Select shape</option>
+                                    <option value="round">Round</option>
+                                    <option value="square">Square</option>
+                                    <option value="rectangle">Rectangle</option>
+                                    <option value="heart">Heart</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Message</label>
+                                <textarea name="message" placeholder="Describe your theme, colors, or design. Specify if gluten-free (preference or allergy)."></textarea>
+                            </div>
+                            <button type="submit" class="btn-add-cart">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAKE POPS -->
+    <section class="order-section" id="cakepops">
+        <div class="order-section-inner">
+            <h2 class="order-section-title">Cake Pops</h2>
+            <div class="order-section-divider"></div>
+            <div class="items-grid">
+                <div class="item-card">
+                    <img src="./assets/Cakepops/cakepop6.png" class="item-card-img" alt="Basic Cake Pops">
+                    <div class="item-card-body">
+                        <h3 class="item-card-name">Basic Cake Pops</h3>
+                        <p class="item-card-desc">Bite-sized cake on a stick, dipped and ready to enjoy. A fun treat for any gathering.</p>
+                        <p class="item-card-price">$24.99 a dozen</p>
+                        <form class="order-form" data-product="Basic Cake Pops" data-price="24.99" data-unit="dozen">
+                            <div class="form-field">
+                                <label>Flavor</label>
+                                <select name="flavor" required>
+                                    <option value="" disabled selected>Select flavor</option>
+                                    <option value="vanilla">Vanilla</option>
+                                    <option value="chocolate">Chocolate</option>
+                                    <option value="strawberry">Strawberry</option>
+                                    <option value="mint">Mint</option>
+                                    <option value="caramel">Caramel</option>
+                                    <option value="blueberry">Blueberry</option>
+                                    <option value="lemon">Lemon</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Quantity</label>
+                                <select name="quantity" required>
+                                    <option value="" disabled selected>Select quantity</option>
+                                    <option value="12">12</option>
+                                    <option value="24">24</option>
+                                    <option value="36">36</option>
+                                    <option value="48">48</option>
+                                    <option value="60">60</option>
+                                    <option value="72">72</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Message</label>
+                                <textarea name="message" placeholder="Please specify if gluten-free. Note whether preference or allergy."></textarea>
+                            </div>
+                            <button type="submit" class="btn-add-cart">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <img src="./assets/Cakepops/cakepop9.png" class="item-card-img" alt="Occasion Cake Pops">
+                    <div class="item-card-body">
+                        <h3 class="item-card-name">Occasion Cake Pops</h3>
+                        <p class="item-card-desc">Custom-decorated cake pops designed to match your event's theme, colors, and style.</p>
+                        <p class="item-card-price">$34.99 a dozen</p>
+                        <form class="order-form" data-product="Occasion Cake Pops" data-price="34.99" data-unit="dozen">
+                            <div class="form-field">
+                                <label>Flavor</label>
+                                <select name="flavor" required>
+                                    <option value="" disabled selected>Select flavor</option>
+                                    <option value="vanilla">Vanilla</option>
+                                    <option value="chocolate">Chocolate</option>
+                                    <option value="strawberry">Strawberry</option>
+                                    <option value="mint">Mint</option>
+                                    <option value="caramel">Caramel</option>
+                                    <option value="blueberry">Blueberry</option>
+                                    <option value="lemon">Lemon</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Quantity</label>
+                                <select name="quantity" required>
+                                    <option value="" disabled selected>Select quantity</option>
+                                    <option value="12">12</option>
+                                    <option value="24">24</option>
+                                    <option value="36">36</option>
+                                    <option value="48">48</option>
+                                    <option value="60">60</option>
+                                    <option value="72">72</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Message</label>
+                                <textarea name="message" placeholder="Describe your theme, colors, or design. Specify if gluten-free (preference or allergy)."></textarea>
+                            </div>
+                            <button type="submit" class="btn-add-cart">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUPCAKES -->
+    <section class="order-section" id="cupcakes">
+        <div class="order-section-inner">
+            <h2 class="order-section-title">Cupcakes</h2>
+            <div class="order-section-divider"></div>
+            <div class="items-grid">
+                <div class="item-card">
+                    <img src="./assets/Cupcakes/cupcake.png" class="item-card-img" alt="Basic Cupcakes">
+                    <div class="item-card-body">
+                        <h3 class="item-card-name">Basic Cupcakes</h3>
+                        <p class="item-card-desc">Fluffy cupcakes topped with creamy frosting. A classic favorite in your choice of flavor.</p>
+                        <p class="item-card-price">$18.99 a dozen</p>
+                        <form class="order-form" data-product="Basic Cupcakes" data-price="18.99" data-unit="dozen">
+                            <div class="form-field">
+                                <label>Flavor</label>
+                                <select name="flavor" required>
+                                    <option value="" disabled selected>Select flavor</option>
+                                    <option value="vanilla">Vanilla</option>
+                                    <option value="chocolate">Chocolate</option>
+                                    <option value="strawberry">Strawberry</option>
+                                    <option value="mint">Mint</option>
+                                    <option value="caramel">Caramel</option>
+                                    <option value="blueberry">Blueberry</option>
+                                    <option value="lemon">Lemon</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Quantity</label>
+                                <select name="quantity" required>
+                                    <option value="" disabled selected>Select quantity</option>
+                                    <option value="12">12</option>
+                                    <option value="24">24</option>
+                                    <option value="36">36</option>
+                                    <option value="48">48</option>
+                                    <option value="60">60</option>
+                                    <option value="72">72</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Message</label>
+                                <textarea name="message" placeholder="Please specify if gluten-free. Note whether preference or allergy."></textarea>
+                            </div>
+                            <button type="submit" class="btn-add-cart">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <img src="./assets/Cupcakes/cupcake3.jpg" class="item-card-img" alt="Occasion Cupcakes">
+                    <div class="item-card-body">
+                        <h3 class="item-card-name">Occasion Cupcakes</h3>
+                        <p class="item-card-desc">Custom-decorated cupcakes designed for your special event. Elegant, fun, and unforgettable.</p>
+                        <p class="item-card-price">$27.99 a dozen</p>
+                        <form class="order-form" data-product="Occasion Cupcakes" data-price="27.99" data-unit="dozen">
+                            <div class="form-field">
+                                <label>Flavor</label>
+                                <select name="flavor" required>
+                                    <option value="" disabled selected>Select flavor</option>
+                                    <option value="vanilla">Vanilla</option>
+                                    <option value="chocolate">Chocolate</option>
+                                    <option value="strawberry">Strawberry</option>
+                                    <option value="mint">Mint</option>
+                                    <option value="caramel">Caramel</option>
+                                    <option value="blueberry">Blueberry</option>
+                                    <option value="lemon">Lemon</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Quantity</label>
+                                <select name="quantity" required>
+                                    <option value="" disabled selected>Select quantity</option>
+                                    <option value="12">12</option>
+                                    <option value="24">24</option>
+                                    <option value="36">36</option>
+                                    <option value="48">48</option>
+                                    <option value="60">60</option>
+                                    <option value="72">72</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Message</label>
+                                <textarea name="message" placeholder="Describe your theme, colors, or design. Specify if gluten-free (preference or allergy)."></textarea>
+                            </div>
+                            <button type="submit" class="btn-add-cart">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="back-to-top-wrapper">
+    <a href="#" class="btn-back-to-top">
+        <i class="fa-solid fa-arrow-up"></i> Back to Top
+    </a>
+</div>
+    </section>
+
+    <!-- CONTACT MODAL -->
+    <div class="modal-overlay" id="contact-modal">
+        <div class="modal">
+            <button class="modal-close" onclick="toggleContact()">&times;</button>
+            <h2>Contact Us</h2>
+            <p>Have questions or a special request? Reach out and we'll get back to you shortly.</p>
+            <form class="contact-form" onsubmit="handleContact(event)">
+                <div class="form-field">
+                    <label>Name</label>
+                    <input type="text" name="name" required placeholder="Your name">
+                </div>
+                <div class="form-field">
+                    <label>Email</label>
+                    <input type="email" name="email" required placeholder="you@example.com">
+                </div>
+                <div class="form-field">
+                    <label>Message</label>
+                    <textarea name="message" required placeholder="Tell us what you're looking for..."></textarea>
+                </div>
+                <button type="submit" class="btn-add-cart">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="./Logo/logo 4.png" alt="Rustic Acres logo" class="footer-logo">
+                <p>Homemade baked goods crafted with love in every bite.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="#" onclick="toggleContact()">Contact</a>
+                <a href="cart.html">Cart</a>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+            </div>
+        </div>
+        <p class="footer-disclaimer">**Disclaimer: This is a Cottage Bakery and operates under Missouri State Cottage Law.**</p>
+        <p class="footer-copy">&copy; 2025 Rustic Acres Baked Creations. All rights reserved.</p>
+    </footer>
+<script>
+    function toggleContact() {
+        const modal = document.getElementById('contact-modal');
+        if (modal) modal.classList.toggle('active');
+    }
+</script>
+    <script src="order.js"></script>
+</body>
+</html>
